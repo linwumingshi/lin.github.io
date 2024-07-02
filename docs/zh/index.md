@@ -5,12 +5,12 @@ layout: home
 hero:
   title: Smart-Doc
   name: Smart-Doc
-  text: "A non-intrusive api interface document generator."
-  tagline: Smart-doc is a java restful api document generation tool.Smart-doc is based on interface source code analysis to generate interface documentation, completely zero-injection.
+  text: "一个无侵入式的api接口文档生成器"
+  tagline: smart-doc是一款同时支持JAVA RESTful API和Apache Dubbo RPC接口文档生成的工具。完全基于注释生成文档，做到零侵入
 
 features:
-  - title: 🗂️ Product Introduction
-    details: Smart-doc is a java restful api document generation tool.Smart-doc is based on interface source code analysis to generate interface documentation, completely zero-injection.
+  - title: 🗂️ 产品简介
+    details: smart-doc是一款同时支持JAVA REST API、JAVA WebSocket和Apache Dubbo RPC接口文档生成的工具。完全基于注释生成文档，做到零侵入
 ---
 
 
