@@ -1,0 +1,19 @@
+{
+  "name": "lin.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "packageManager": "pnpm@9.4.0",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.77.6",
+    "vitepress": "^1.2.3"
+  }
+}
