@@ -11,18 +11,21 @@
 
 2、`Clone`您`fork`的项目到本地仓库，创建其他分支以进行修改。
 
-3、在本地环境中运行`smart-doc`，并确认所做的改动是否生效。可参考 [快速开始](zh-cn/start/quickStart.md) 了解如何启动`smart-doc`并生成`API`文档。
+3、在本地环境中运行`smart-doc`，并确认所做的改动是否生效。可参考 [快速开始](../getting-started) 了解如何启动`smart-doc`并生成`API`文档。
 
 4、完成修改后，推送提交并提交`Pull Request`给`smart-doc`的主仓库。
-请参考[Pull Request](pull-request-process.md)流程 来提交合并请求。
+请参考[Pull Request](pull-request-process)流程 来提交合并请求。
 
 5、等待社区`Committer`审核并合并您的`Pull Request`。
 
 6、如果合并成功，恭喜您已经成功做出了贡献！
 
-- [PR提交流程参考文档](zh-cn/community/pull-request-process.md)
+- [PR提交流程参考文档](pull-request-process)
 
+::: tip
 <span style="color:red;">**为了方便社区后续国际化推广，提pr请用英文，可以使用文心一言、科大讯飞星火等GPT工具辅助翻译成英文**</span>
+:::
+
 
 ## 注意的事项
 在为`smart-doc`提交贡献时，请注意以下事项：

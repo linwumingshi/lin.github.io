@@ -9,15 +9,15 @@ If you would like to contribute to `smart-doc`, you can follow these steps:
 
 2. Clone the forked project to your local repository and create another branch for modifications.
 
-3. Run `smart-doc` in your local environment to confirm that your changes are effective. You can refer to [Quick Start](start/quickStart.md) to learn how to start `smart-doc` and generate API documentation.
+3. Run `smart-doc` in your local environment to confirm that your changes are effective. You can refer to [Quick Start](../getting-started) to learn how to start `smart-doc` and generate API documentation.
 
-4. After completing your modifications, push the commits and submit a Pull Request to the main `smart-doc` repository. Please refer to the [Pull Request](community/pull-request-process.md) process to submit your merge request.
+4. After completing your modifications, push the commits and submit a Pull Request to the main `smart-doc` repository. Please refer to the [Pull Request](pull-request-process) process to submit your merge request.
 
 5. Wait for the community Committers to review and merge your Pull Request.
 
 6. If the merge is successful, congratulations, you have made a successful contribution!
 
-- [Reference Document for PR Submission Process](community/pull-request-process.md)
+- [Reference Document for PR Submission Process](pull-request-process)
 
 
 ## Points to Note
