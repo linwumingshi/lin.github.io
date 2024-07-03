@@ -71,8 +71,8 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             text: 'Plugins',
             collapsed: false,
             items: [
-                { text: 'maven', link: 'plugins/maven' },
-                { text: 'gradle', link: 'plugins/gradle' }
+                { text: 'Maven', link: 'plugins/maven' },
+                { text: 'Gradle', link: 'plugins/gradle' }
             ]
         },
         {
@@ -87,7 +87,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             text: 'Community',
             collapsed: false,
             items: [
-                { text: 'Idea', link: '/community/idea' },
+                { text: 'Concept', link: '/community/concept' },
                 { text: 'Developer', link: '/community/developer' },
                 { text: 'Contributing', link: '/community/contributing' },
             ]

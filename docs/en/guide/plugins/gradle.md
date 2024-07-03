@@ -1,4 +1,4 @@
-# gradle
+# Gradle
 
 ## Introduce
 `smart-doc-gradle-plugin` is a `gradle` plugin developed by the `smart-doc` official team. This plugin is available starting from `smart-doc 1.8.6` version.

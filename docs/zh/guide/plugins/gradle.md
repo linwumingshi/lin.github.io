@@ -1,4 +1,4 @@
-# gradle
+# Gradle
 
 ## Introduce
 `smart-doc-gradle-plugin`是`smart-doc`官方团队开发的`gradle`插件，该插件从`smart-doc 1.8.6`版本开始提供，

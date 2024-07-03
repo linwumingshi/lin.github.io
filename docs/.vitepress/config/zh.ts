@@ -99,8 +99,8 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             text: '插件',
             collapsed: false,
             items: [
-                { text: 'maven', link: 'plugins/maven' },
-                { text: 'gradle', link: 'plugins/gradle' }
+                { text: 'Maven', link: 'plugins/maven' },
+                { text: 'Gradle', link: 'plugins/gradle' }
             ]
         },
         {
@@ -115,7 +115,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             text: '社区',
             collapsed: false,
             items: [
-                { text: '理念', link: '/community/idea' },
+                { text: '理念', link: '/community/concept' },
                 { text: '开发者', link: '/community/developer' },
                 { text: '贡献指南', link: '/community/contributing' },
             ]
