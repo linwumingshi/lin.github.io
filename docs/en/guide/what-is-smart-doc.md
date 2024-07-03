@@ -1,57 +1,85 @@
 # What is Smart-Doc?
 
-VitePress is a [Static Site Generator](https://en.wikipedia.org/wiki/Static_site_generator) (SSG) designed for building fast, content-centric websites. In a nutshell, VitePress takes your source content written in [Markdown](https://en.wikipedia.org/wiki/Markdown), applies a theme to it, and generates static HTML pages that can be easily deployed anywhere.
+![maven](https://img.shields.io/maven-central/v/com.ly.smart-doc/smart-doc)
+[![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+![number of issues closed](https://img.shields.io/github/issues-closed-raw/smart-doc-group/smart-doc)
+![closed pull requests](https://img.shields.io/github/issues-pr-closed/smart-doc-group/smart-doc)
+![java version](https://img.shields.io/badge/JAVA-1.8+-green.svg)
+![git star](https://img.shields.io/github/stars/smart-doc-group/smart-doc.svg)
 
+## Introduce
+`smart-doc[smɑːt dɒk]` is a tool that supports both `JAVA REST API`、`JAVA WebSocket` and `Apache Dubbo RPC` interface document generation.
+`smart-doc` is based on interface source code analysis to generate interface documents, and zero annotation intrusion.
+You only need to write `Javadoc` comments when developing, `smart-doc` can help you generate `Markdown` or `HTML5` document.
+smart-doc does not need to inject annotations into the code like Swagger.
 <div class="tip custom-block" style="padding-top: 8px">
 
 Just want to try it out? Skip to the [Quickstart](./getting-started).
 
 </div>
 
-## Use Cases
+## Features
 
-- **Documentation**
+- Zero annotation, zero learning cost, only need to write standard `JAVA` document comments.
+- Automatic derivation based on source code interface definition, powerful return structure derivation support.
+- Support `Spring MVC`, `Spring Boot`, `Spring Boot Web Flux` (Not support endpoint), `Feign`,`JAX-RS`.
+- Supports the derivation of asynchronous interface returns such as `Callable`, `Future`, `CompletableFuture`.
+- Support `JSR-303`parameter verification specification.
+- Support for automatic generation of request examples based on request parameters.
+- Support for generating `JSON` return value examples.
+- Support for loading source code from outside the project to generate field comments (including the sources jar
+  package).
+- Support for generating multiple formats of documents: `Markdown`,`HTML5`,`Word`,`Asciidoctor`,`Postman Collection 2.0+`,`OpenAPI 3.0`.
+- Support the generation of `JMeter` performance testing scripts
+- Support for exporting error codes and data dictionary codes to `API` documentation.
+- The `debug` html5 page fully supports file upload and download testing.
+- Support `Apache Dubbo RPC`.
 
-  VitePress ships with a default theme designed for technical documentation. It powers this page you are reading right now, along with the documentation for [Vite](https://vitejs.dev/), [Rollup](https://rollupjs.org/), [Pinia](https://pinia.vuejs.org/), [VueUse](https://vueuse.org/), [Vitest](https://vitest.dev/), [D3](https://d3js.org/), [UnoCSS](https://unocss.dev/), [Iconify](https://iconify.design/) and [many more](https://www.vuetelescope.com/explore?framework.slug=vitepress).
+## Best Practice
 
-  The [official Vue.js documentation](https://vuejs.org/) is also based on VitePress, but uses a custom theme shared between multiple translations.
+`smart-doc` + [Torna](http://torna.cn/) form an industry-leading document generation and management solution, using smart-doc to complete `Java` source code analysis and extract annotations to generate API documents without intrusion, and automatically push the documents to the `Torna` enterprise-level interface document management platform.
+![smart-doc + Torna](./_images/smart-doc-en.png)
 
-- **Blogs, Portfolios, and Marketing Sites**
+> Torna is an open source API document management system, developed by the `smart-doc` official team. Torna provides convenience for enterprise API document management.
 
-  VitePress supports [fully customized themes](./custom-theme), with the developer experience of a standard Vite + Vue application. Being built on Vite also means you can directly leverage Vite plugins from its rich ecosystem. In addition, VitePress provides flexible APIs to [load data](./data-loading) (local or remote) and [dynamically generate routes](./routing#dynamic-routes). You can use it to build almost anything as long as the data can be determined at build time.
+## TODO
 
-  The official [Vue.js blog](https://blog.vuejs.org/) is a simple blog that generates its index page based on local content.
+- GRPC
 
-## Developer Experience
+## License
 
-VitePress aims to provide a great Developer Experience (DX) when working with Markdown content.
+`smart-doc` is under the Apache 2.0 license. See the [LICENSE](https://github.com/smart-doc-group/smart-doc/blob/master/LICENSE) file for details.
 
-- **[Vite-Powered:](https://vitejs.dev/)** instant server start, with edits always instantly reflected (<100ms) without page reload.
+**PS:** Smart-doc source code files are all with copyright notes. Please keep the original copyright when using the key code for the second open source, otherwise you will be responsible for the consequences!
 
-- **[Built-in Markdown Extensions:](./markdown)** Frontmatter, tables, syntax highlighting... you name it. Specifically, VitePress provides many advanced features for working with code blocks, making it ideal for highly technical documentation.
+## Who is using
 
-- **[Vue-Enhanced Markdown:](./using-vue)** each Markdown page is also a Vue [Single-File Component](https://vuejs.org/guide/scaling-up/sfc.html), thanks to Vue template's 100% syntax compatibility with HTML. You can embed interactivity in your static content using Vue templating features or imported Vue components.
+> These are only part of the companies using `smart-doc`, for reference only. If you are using `smart-doc`, please [add your company here](https://github.com/smart-doc-group/smart-doc/issues/12) to tell us your scenario to make smart-doc better.
 
-## Performance
+![iflytek](/assets/_images/known-users/iflytek.png)
+![oneplus](/assets/_images/known-users/oneplus.png)
+![xiaomi](/assets/_images/known-users/xiaomi.png)
+![shunfeng](/assets/_images/known-users/shunfeng.png)
+![ly](/assets/_images/known-users/ly.jpeg)
+![kuishou](/assets/_images/known-users/kuishou.png)
+![mafengwo](/assets/_images/known-users/mafengwo.png)
+![yunda](/assets/_images/known-users/yunda.png)
+![zhongtongzhiyun](/assets/_images/known-users/zhongtongzhiyun.png)
+![tcsklogo](/assets/_images/known-users/tcsklogo.jpeg)
+![flipboard](/assets/_images/known-users/flipboard.png)
+![dianxin](/assets/_images/known-users/dianxin.png)
+![yidong](/assets/_images/known-users/yidong.png)
+![neusoft](/assets/_images/known-users/neusoft.png)
+![zhongkezhilian](/assets/_images/known-users/zhongkezhilian.png)
+![hand-logo](/assets/_images/known-users/hand-logo.svg)
+![yuanmengjiankang](/assets/_images/known-users/yuanmengjiankang.png)
 
-Unlike many traditional SSGs where each navigation results in a full page reload, a website generated by VitePress serves static HTML on the initial visit, but becomes a [Single Page Application](https://en.wikipedia.org/wiki/Single-page_application) (SPA) for subsequent navigation within the site. This model, in our opinion, provides an optimal balance for performance:
 
-- **Fast Initial Load**
 
-  The initial visit to any page will be served the static, pre-rendered HTML for fast loading speed and optimal SEO. The page then loads a JavaScript bundle that turns the page into a Vue SPA ("hydration"). Contrary to common assumptions of SPA hydration being slow, this process is actually extremely fast thanks to Vue 3's raw performance and compiler optimizations. On [PageSpeed Insights](https://pagespeed.web.dev/report?url=https%3A%2F%2Fvitepress.dev%2F), typical VitePress sites achieve near-perfect performance scores even on low-end mobile devices with a slow network.
+## Acknowledgements
+Thanks to [JetBrains SoftWare](https://www.jetbrains.com) for providing free Open Source license for this open source project.
+![jetbrains](/assets/_images/jetbrains-variant-3.png)
 
-- **Fast Post-load Navigation**
+## Contact
 
-  More importantly, the SPA model leads to better user experience **after** the initial load. Subsequent navigation within the site will no longer cause a full page reload. Instead, the incoming page's content will be fetched and dynamically updated. VitePress also automatically pre-fetches page chunks for links that are within viewport. In most cases, post-load navigation will feel instant.
-
-- **Interactivity Without Penalty**
-
-  To be able to hydrate the dynamic Vue parts embedded inside static Markdown, each Markdown page is processed as a Vue component and compiled into JavaScript. This may sound inefficient, but the Vue compiler is smart enough to separate the static and dynamic parts, minimizing both the hydration cost and payload size. For the initial page load, the static parts are automatically eliminated from the JavaScript payload and skipped during hydration.
-
-## What About VuePress?
-
-VitePress is the spiritual successor of VuePress. The original VuePress was based on Vue 2 and webpack. With Vue 3 and Vite under the hood, VitePress provides significantly better DX, better production performance, a more polished default theme, and a more flexible customization API.
-
-The API difference between VitePress and VuePress mostly lies in theming and customization. If you are using VuePress 1 with the default theme, it should be relatively straightforward to migrate to VitePress.
-
-There has also been effort invested into VuePress 2, which also supports Vue 3 and Vite with more compatibility with VuePress 1. However, maintaining two SSGs in parallel isn't sustainable, so the Vue team has decided to focus on VitePress as the main recommended SSG in the long run.
+Email： opensource@ly.com

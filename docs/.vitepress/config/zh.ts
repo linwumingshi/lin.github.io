@@ -9,11 +9,11 @@ export const zh = defineConfig({
     description: '由 Vite 和 Vue 驱动的静态站点生成器',
 
     themeConfig: {
+        carbonAds: undefined,
         nav: nav(),
 
         sidebar: {
-            '/zh/guide/': { base: '/zh/guide/', items: sidebarGuide() },
-            '/zh/reference/': { base: '/zh/reference/', items: sidebarReference() }
+            '/zh/guide/': { base: '/zh/guide/', items: sidebarGuide() }
         },
 
         editLink: {
@@ -58,24 +58,6 @@ function nav(): DefaultTheme.NavItem[] {
             text: '指南',
             link: '/zh/guide/what-is-smart-doc',
             activeMatch: '/zh/guide/'
-        },
-        {
-            text: '参考',
-            link: '/zh/reference/site-config',
-            activeMatch: '/zh/reference/'
-        },
-        {
-            text: pkg.version,
-            items: [
-                {
-                    text: '更新日志',
-                    link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md'
-                },
-                {
-                    text: '参与贡献',
-                    link: 'https://github.com/vuejs/vitepress/blob/main/.github/contributing.md'
-                }
-            ]
         }
     ]
 }
@@ -88,76 +70,60 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             items: [
                 { text: '什么是 Smart-Doc？', link: 'what-is-smart-doc' },
                 { text: '快速开始', link: 'getting-started' },
-                { text: '路由', link: 'routing' },
-                { text: '部署', link: 'deploy' }
+                { text: '使用指南', link: 'guide' },
+                { text: '最佳实践', link: 'bestPractice' },
+                { text: '示例', link: 'example' }
             ]
         },
         {
-            text: '写作',
+            text: '高级',
             collapsed: false,
             items: [
-                { text: 'Markdown 扩展', link: 'markdown' },
-                { text: '资源处理', link: 'asset-handling' },
-                { text: 'frontmatter', link: 'frontmatter' },
-                { text: '在 Markdown 使用 Vue', link: 'using-vue' },
-                { text: '国际化', link: 'i18n' }
+                { text: '配置项', link: 'advanced/config' },
+                { text: '高级特性', link: 'advanced/advancedFeatures' },
+                { text: '接口调试', link: 'advanced/debug' },
+                { text: '扩展', link: 'advanced/expand' },
             ]
         },
         {
-            text: '自定义',
+            text: '集成框架',
             collapsed: false,
             items: [
-                { text: '自定义主题', link: 'custom-theme' },
-                { text: '扩展默认主题', link: 'extending-default-theme' },
-                { text: '构建时数据加载', link: 'data-loading' },
-                { text: 'SSR 兼容性', link: 'ssr-compat' },
-                { text: '连接 CMS', link: 'cms' }
+                { text: 'Torna', link: 'integrated/torna' },
+                { text: 'Dubbo', link: 'integrated/dubbo.md' },
+                { text: 'JAX-RS', link: 'integrated/jax-rs' },
+                { text: 'JMeter', link: '/integrated/jmeter' },
             ]
         },
         {
-            text: '实验性功能',
+            text: '插件',
             collapsed: false,
             items: [
-                { text: 'MPA 模式', link: 'mpa-mode' },
-                { text: 'sitemap 生成', link: 'sitemap-generation' }
+                { text: 'maven', link: 'plugins/maven' },
+                { text: 'gradle', link: 'plugins/gradle' }
             ]
         },
-        { text: '配置和 API 参考', base: '/zh/reference/', link: 'site-config' }
+        {
+            text: 'FAQ',
+            collapsed: false,
+            items: [
+                { text: '常见问题', link: 'faq/faq' },
+            ]
+        },
+        { text: 'FAQ', base: '/zh/reference/', link: 'site-config' },
+        {
+            text: '社区',
+            collapsed: false,
+            items: [
+                { text: '理念', link: '/community/idea' },
+                { text: '开发者', link: '/community/developer' },
+                { text: '贡献指南', link: '/community/contributing' },
+            ]
+        },
+        { text: '社区案例',  link: 'use-cases' },
     ]
 }
 
-function sidebarReference(): DefaultTheme.SidebarItem[] {
-    return [
-        {
-            text: '参考',
-            items: [
-                { text: '站点配置', link: 'site-config' },
-                { text: 'frontmatter 配置', link: 'frontmatter-config' },
-                { text: '运行时 API', link: 'runtime-api' },
-                { text: 'CLI', link: 'cli' },
-                {
-                    text: '默认主题',
-                    base: '/zh/reference/default-theme-',
-                    items: [
-                        { text: '概览', link: 'config' },
-                        { text: '导航栏', link: 'nav' },
-                        { text: '侧边栏', link: 'sidebar' },
-                        { text: '主页', link: 'home-page' },
-                        { text: '页脚', link: 'footer' },
-                        { text: '布局', link: 'layout' },
-                        { text: '徽章', link: 'badge' },
-                        { text: '团队页', link: 'team-page' },
-                        { text: '上下页链接', link: 'prev-next-links' },
-                        { text: '编辑链接', link: 'edit-link' },
-                        { text: '最后更新时间戳', link: 'last-updated' },
-                        { text: '搜索', link: 'search' },
-                        { text: 'Carbon Ads', link: 'carbon-ads' }
-                    ]
-                }
-            ]
-        }
-    ]
-}
 
 export const search: DefaultTheme.AlgoliaSearchOptions['locales'] = {
     zh: {

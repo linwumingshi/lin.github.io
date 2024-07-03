@@ -1,5 +1,5 @@
-import { defineConfig } from 'vitepress'
-import { search as zhSearch } from './zh'
+import {defineConfig} from 'vitepress'
+import {search as zhSearch} from './zh'
 
 export const shared = defineConfig({
     title: 'VitePress',
@@ -46,7 +46,7 @@ export const shared = defineConfig({
     ],
 
     themeConfig: {
-        logo: { src: '/vitepress-logo-mini.svg', width: 24, height: 24 },
+        // logo: { src: '/vitepress-logo-mini.svg', width: 24, height: 24 },
 
         socialLinks: [
             { icon: 'github', link: 'https://github.com/TongchengOpenSource/smart-doc' }
