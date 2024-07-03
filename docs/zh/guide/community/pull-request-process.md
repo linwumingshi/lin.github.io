@@ -7,7 +7,7 @@
 
 为了防止上游仓库的更改导致冲突，在`pr`之前要先`sync frok`, 解决冲突（尽量将冲突在本地解决）。
 
-![image](https://github.com/smart-doc-group/smart-doc-group.github.io/assets/50514081/3541425d-19fe-4ab6-8a2a-d23057142ea9)
+![sync-fork](/assets/sync-fork.png)
 
 
 ## 2. 从远程仓库同步 && 本地解决冲突
@@ -27,7 +27,7 @@
 
 1. **创建 pull request**
 
-![image](/assets/277099410-0be96dfd-6a78-495b-8618-49994f417f93.png)
+![image](/assets/create-full-pequest.png)
 
 2. **认真填写title和comment**。`title`简单描述你的意图，`comment`中详细描述过程。可以参考已关闭的`pr`)。
 
@@ -35,6 +35,6 @@
 
 3. **处理review**。如果你的`pull request`很完美，会直接被社区采纳。如果社区`review`发现问题，会有评论，我们可以直接讨论，最后解决问题了，要点击 `Resolve conversation`。
 
-![1698071332712](/assets/277372645-9625c152-0eeb-4dd9-91d0-1f38a053bc1a.png)
+![handle-reviews](/assets/handle-reviews.png)
 
 > 注意：如果解决问题期间出现了多个commit，我们要使用rebase命令合并commit!
