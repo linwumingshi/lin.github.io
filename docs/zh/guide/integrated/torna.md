@@ -8,7 +8,7 @@
 ## 文档全流程自动化
 `smart-doc` + [Torna](http://torna.cn) 组成行业领先的文档生成和管理解决方案，使用`smart-doc`无侵入完成`Java`源代码分析和提取注释生成`API`文档，自动将文档推送到`Torna`企业级接口文档管理平台。
 
-![smart-doc+torna](/assets/_images/smart-to-torna.png)
+![smart-doc+torna](/assets/smart-to-torna.png)
 
 >需要从smart-doc 2.0.9才支持推送文档到torna，当然推荐使用smart-doc同学关注新版本的发布。推荐smart-doc和torna都使用最新的版本。
 ## 如何把文档自动推送到torna
@@ -40,9 +40,9 @@
 
 查看空间里相关项目的`token`
 
-![输入图片说明](/assets/_images/224356_2bc8c3b7_144669.png "屏幕截图.png")
+![输入图片说明](/assets/224356_2bc8c3b7_144669.png "屏幕截图.png")
 
 ## 推送操作
 集成`smart-doc`并完成推送配置后，就可以使用利用`smart-doc`的`Maven`或者是`Gradle`插件来直接把文档推送到`torna`中了。
-![输入图片说明](/assets/_images/224947_853e59e3_144669.png "屏幕截图.png")
+![输入图片说明](/assets/224947_853e59e3_144669.png "屏幕截图.png")
 > 如果你想使用命令行或者是gradle，请查看smart-doc官方maven和gradle插件使用的文档，此处不再赘述。

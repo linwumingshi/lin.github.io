@@ -192,7 +192,7 @@ The `pom` file under the outermost `spring-boot-maven-multiple-module` defines p
             <plugin>
             <groupId>com.ly.smart-doc</groupId>
             <artifactId>smart-doc-maven-plugin</artifactId>
-            <version>3.0.0</version>
+            <version>[latest version]</version>
             <configuration>
                 <configFile>${basedir}/src/main/resources/smart-doc.json</configFile>
                 <projectName>test</projectName>

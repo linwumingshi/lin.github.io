@@ -19,7 +19,7 @@
 
 <div class="tip custom-block" style="padding-top: 8px">
 
-查看[快速开始](./getting-started)了解详情。
+查看[快速开始](getting-started)了解详情。
 
 </div>
 
@@ -48,7 +48,7 @@
 ## 最佳实践
 
 `smart-doc` + [Torna](http://torna.cn/) 组成行业领先的文档生成和管理解决方案，使用`smart-doc`无侵入完成`JAVA`源代码分析和提取注释生成`API`文档，自动将文档推送到`Torna`企业级接口文档管理平台。
-![smart-doc + Torna](/assets/_images/smart-to-torna.png)
+![smart-doc + Torna](/assets/smart-to-torna.png)
 
 [smart-doc+Torna文档自动化](zh-cn/diy/integrated)
 
@@ -60,9 +60,9 @@
 
 ## Contact
 
-愿意参与构建`smart-doc`或者是需要交流问题可以扫描微信二维码发送`smart-doc`备注信息后管理员拉进群，[常见问题答疑](zh-cn/faq/faq)
-
-![qq群2](/assets/_images/smart-doc-qq2.jpeg)
+愿意参与构建`smart-doc`或者是需要交流问题可以扫描微信二维码发送`smart-doc`备注信息后管理员拉进群，[常见问题答疑](faq/faq)
+![微信群](/assets/wechat.png)
+![qq群2](/assets/smart-doc-qq2.jpeg)
 
 > 1群已满，有问题请加2群。
 
@@ -71,23 +71,23 @@
 
 > 排名不分先后，更多接入公司，欢迎在[此处](https://github.com/smart-doc-group/smart-doc/issues/12)登记（仅供开源用户参考）
 
-![iflytek](/assets/_images/known-users/iflytek.png)
-![oneplus](/assets/_images/known-users/oneplus.png)
-![xiaomi](/assets/_images/known-users/xiaomi.png)
-![shunfeng](/assets/_images/known-users/shunfeng.png)
-![ly](/assets/_images/known-users/ly.jpeg)
-![kuishou](/assets/_images/known-users/kuishou.png)
-![mafengwo](/assets/_images/known-users/mafengwo.png)
-![yunda](/assets/_images/known-users/yunda.png)
-![zhongtongzhiyun](/assets/_images/known-users/zhongtongzhiyun.png)
-![tcsklogo](/assets/_images/known-users/tcsklogo.jpeg)
-![flipboard](/assets/_images/known-users/flipboard.png)
-![dianxin](/assets/_images/known-users/dianxin.png)
-![yidong](/assets/_images/known-users/yidong.png)
-![neusoft](/assets/_images/known-users/neusoft.png)
-![zhongkezhilian](/assets/_images/known-users/zhongkezhilian.png)
-![hand-logo](/assets/_images/known-users/hand-logo.svg)
-![yuanmengjiankang](/assets/_images/known-users/yuanmengjiankang.png)
+![iflytek](/assets/known-users/iflytek.png)
+![oneplus](/assets/known-users/oneplus.png)
+![xiaomi](/assets/known-users/xiaomi.png)
+![shunfeng](/assets/known-users/shunfeng.png)
+![ly](/assets/known-users/ly.jpeg)
+![kuishou](/assets/known-users/kuishou.png)
+![mafengwo](/assets/known-users/mafengwo.png)
+![yunda](/assets/known-users/yunda.png)
+![zhongtongzhiyun](/assets/known-users/zhongtongzhiyun.png)
+![tcsklogo](/assets/known-users/tcsklogo.jpeg)
+![flipboard](/assets/known-users/flipboard.png)
+![dianxin](/assets/known-users/dianxin.png)
+![yidong](/assets/known-users/yidong.png)
+![neusoft](/assets/known-users/neusoft.png)
+![zhongkezhilian](/assets/known-users/zhongkezhilian.png)
+![hand-logo](/assets/known-users/hand-logo.svg)
+![yuanmengjiankang](/assets/known-users/yuanmengjiankang.png)
 
 
 
@@ -98,7 +98,7 @@
 
 ## 致谢
 感谢[JetBrains SoftWare](https://www.jetbrains.com) 为本开源项目提供的免费Open Source license。<br/>
-![jetbrains](/assets/_images/jetbrains-variant-3.png)
+![jetbrains](/assets/jetbrains-variant-3.png)
 
 ## License
 

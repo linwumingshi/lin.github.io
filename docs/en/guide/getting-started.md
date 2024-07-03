@@ -2,11 +2,11 @@
 
 > `smart-doc` has officially developed the Maven plug-in and the Gradle plug-in. This chapter uses the Maven plug-in as an example.
 
-> For Gradle plug-in configuration, please [jump](plugins/gradle.md).
+> For Gradle plug-in configuration, please [jump](plugins/gradle).
 
 
 ## Minimize configuration
-**Please ensure that your code format complies with the format specifications in [Best Practices](start/bestPractice.md)**
+**Please ensure that your code format complies with the format specifications in [Best Practices](bestPractice)**
 
 Create the `smart-doc.json` file in the `resources` directory of the module where the project startup class is located.
 ```json

@@ -14,7 +14,7 @@ You only need to write `Javadoc` comments when developing, `smart-doc` can help 
 smart-doc does not need to inject annotations into the code like Swagger.
 <div class="tip custom-block" style="padding-top: 8px">
 
-Just want to try it out? Skip to the [Quickstart](./getting-started).
+Just want to try it out? Skip to the [Quickstart](getting-started).
 
 </div>
 
@@ -56,29 +56,29 @@ Just want to try it out? Skip to the [Quickstart](./getting-started).
 
 > These are only part of the companies using `smart-doc`, for reference only. If you are using `smart-doc`, please [add your company here](https://github.com/smart-doc-group/smart-doc/issues/12) to tell us your scenario to make smart-doc better.
 
-![iflytek](/assets/_images/known-users/iflytek.png)
-![oneplus](/assets/_images/known-users/oneplus.png)
-![xiaomi](/assets/_images/known-users/xiaomi.png)
-![shunfeng](/assets/_images/known-users/shunfeng.png)
-![ly](/assets/_images/known-users/ly.jpeg)
-![kuishou](/assets/_images/known-users/kuishou.png)
-![mafengwo](/assets/_images/known-users/mafengwo.png)
-![yunda](/assets/_images/known-users/yunda.png)
-![zhongtongzhiyun](/assets/_images/known-users/zhongtongzhiyun.png)
-![tcsklogo](/assets/_images/known-users/tcsklogo.jpeg)
-![flipboard](/assets/_images/known-users/flipboard.png)
-![dianxin](/assets/_images/known-users/dianxin.png)
-![yidong](/assets/_images/known-users/yidong.png)
-![neusoft](/assets/_images/known-users/neusoft.png)
-![zhongkezhilian](/assets/_images/known-users/zhongkezhilian.png)
-![hand-logo](/assets/_images/known-users/hand-logo.svg)
-![yuanmengjiankang](/assets/_images/known-users/yuanmengjiankang.png)
+![iflytek](/assets/known-users/iflytek.png)
+![oneplus](/assets/known-users/oneplus.png)
+![xiaomi](/assets/known-users/xiaomi.png)
+![shunfeng](/assets/known-users/shunfeng.png)
+![ly](/assets/known-users/ly.jpeg)
+![kuishou](/assets/known-users/kuishou.png)
+![mafengwo](/assets/known-users/mafengwo.png)
+![yunda](/assets/known-users/yunda.png)
+![zhongtongzhiyun](/assets/known-users/zhongtongzhiyun.png)
+![tcsklogo](/assets/known-users/tcsklogo.jpeg)
+![flipboard](/assets/known-users/flipboard.png)
+![dianxin](/assets/known-users/dianxin.png)
+![yidong](/assets/known-users/yidong.png)
+![neusoft](/assets/known-users/neusoft.png)
+![zhongkezhilian](/assets/known-users/zhongkezhilian.png)
+![hand-logo](/assets/known-users/hand-logo.svg)
+![yuanmengjiankang](/assets/known-users/yuanmengjiankang.png)
 
 
 
 ## Acknowledgements
 Thanks to [JetBrains SoftWare](https://www.jetbrains.com) for providing free Open Source license for this open source project.
-![jetbrains](/assets/_images/jetbrains-variant-3.png)
+![jetbrains](/assets/jetbrains-variant-3.png)
 
 ## Contact
 

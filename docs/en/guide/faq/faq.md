@@ -62,7 +62,7 @@ Open source is released from this site and synchronized to other warehouses, so 
   
 As long as you master the above methods, you will not be able to find any open source software version.
 
-Have you `GET` arrived? When `GET` arrives, go to https://github.com/smart-doc-group/smart-doc and give us three consecutive clicks!
+Have you `GET` arrived? When `GET` arrives, go to https://github.com/TongchengOpenSource/smart-docand give us three consecutive clicks!
 
 ## Why can't I extract the comments?
 This is often a question asked by newbies. The principle of `smart-doc` is to use comments and generics in the source code to analyze and generate documentation.

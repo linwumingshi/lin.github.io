@@ -1,8 +1,8 @@
 import {createRequire} from 'module'
 import {type DefaultTheme, defineConfig} from 'vitepress'
 
-const require = createRequire(import.meta.url)
-const pkg = require('vitepress/package.json')
+// const require = createRequire(import.meta.url)
+// const pkg = require('vitepress/package.json')
 
 export const en = defineConfig({
     lang: 'en-US',
@@ -17,7 +17,7 @@ export const en = defineConfig({
         },
 
         editLink: {
-            pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
+            pattern: 'https://github.com/linwumingshi/vitepress/edit/main/docs/:path',
             text: 'Edit this page on GitHub'
         },
 
@@ -66,9 +66,9 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             collapsed: false,
             items: [
                 { text: 'Torna', link: 'integrated/torna' },
-                { text: 'Dubbo', link: 'integrated/dubbo.md' },
+                { text: 'Dubbo', link: 'integrated/dubbo' },
                 { text: 'JAX-RS', link: 'integrated/jax-rs' },
-                { text: 'JMeter', link: '/integrated/jmeter' },
+                { text: 'JMeter', link: 'integrated/jmeter' },
             ]
         },
         {
@@ -84,9 +84,9 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             collapsed: false,
             items: [
                 { text: 'FAQ', link: 'faq/faq' },
+                { text: 'Feedback', link: 'faq/feedback' }
             ]
         },
-        { text: 'FAQ', base: '/zh/reference/', link: 'site-config' },
         {
             text: 'Community',
             collapsed: false,

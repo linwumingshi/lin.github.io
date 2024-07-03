@@ -156,7 +156,7 @@ gradle javadocAdoc
 #### Use IDEA
 When you use `Idea`, you can choose what kind of documentation to generate through the `Gradle Helper` plugin.
 
-![Use of smart-doc-gradle plug-in in idea](/assets/_images/idea-gradle-plugin.png)
+![Use of smart-doc-gradle plug-in in idea](/assets/idea-gradle-plugin.png)
 
 ### Plug-in source code
 https://github.com/TongchengOpenSource/smart-doc-gradle-plugin
@@ -183,7 +183,7 @@ Find the `smart-doc` source code and put a breakpoint. The operation is as follo
 ### Command line terminal to set debug mode
 Debugging the `Gradle` plugin is not as simple as debugging `JAVA` programs and `Maven` plugins. You can debug directly by clicking `debug` on `IDEA` to start related operations.
 It is necessary to set the debugging mode on the command line. The operation is as follows:
-![Set debug mode](/assets/_images/003046_3cb24659_144669.png)
+![Set debug mode](/assets/003046_3cb24659_144669.png)
 The main thing in the figure is to open the command line terminal and specify a certain `task` of `smart-doc-gradle-plugin` to run in `debug` mode.
 As shown in the figure above, specify the `task` to build the `html` document to enable the `debug` mode. The command example is as follows:
 
@@ -201,9 +201,9 @@ gradle wrapper
 ```
 ### Add a remote debugging listener
 Click **Edit Configurations**
-![Enter picture description](/assets/_images/004033_cd63df34_144669.png)
+![Enter picture description](/assets/004033_cd63df34_144669.png)
 Click on the "+" sign on the left and click "Remote"
-![Add remote](/assets/_images/set-gradle-debug-name.png)
+![Add remote](/assets/set-gradle-debug-name.png)
 ### Perform debugging
 After completing the above operation, you can use `debug` to debug the plug-in and `smart-doc`, and then check the execution status of `smart-doc`. The operation is as shown below
-![Execute debugging](/assets/_images/gradle-run-debug.png)
+![Execute debugging](/assets/gradle-run-debug.png)

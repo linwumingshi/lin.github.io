@@ -1,7 +1,9 @@
 # 示例
 
 
-## [单模块](https://github.com/smart-doc-group/smart-doc-example-cn)
+## 单模块
+
+[单模块项目参考](https://github.com/smart-doc-group/smart-doc-example-cn)
 
 ### 项目目录结构
 ```shell
@@ -81,8 +83,8 @@ smart-doc-example-cn
 </project>
 ```
 
-
-## [多模块项目参考](https://gitee.com/smart-doc-team/spring-boot-maven-multiple-module)
+## 多模块
+[多模块项目参考](https://gitee.com/smart-doc-team/spring-boot-maven-multiple-module)
 
 ### 项目目录结构
 其中`dubbo-provider`, `spring-boot-web1`, `spring-boot-web2`, `spring-boot-web3`, `spring-boot-web4`为各服务启动模块
@@ -195,7 +197,7 @@ spring-boot-maven-multiple-module-master
             <plugin>
             <groupId>com.ly.smart-doc</groupId>
             <artifactId>smart-doc-maven-plugin</artifactId>
-            <version>2.7.7</version>
+            <version>[latest version]</version>
             <configuration>
                 <!--指定生成文档的使用的配置文件-->
                 <configFile>${basedir}/src/main/resources/smart-doc.json</configFile>

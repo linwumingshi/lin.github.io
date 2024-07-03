@@ -61,7 +61,7 @@
   
 只要你掌握了上面几种方法什么开源软件版本查找都难不倒你。
 
-你`GET`到了吗？`GET`到了那就快去https://github.com/smart-doc-group/smart-doc 给我们一键三连吧！
+你`GET`到了吗？`GET`到了那就快去 [smart-doc](https://github.com/TongchengOpenSource/smart-doc)  给我们一键三连吧！
 
 ## 注释怎么提取不到啊？
 这个往往是一些萌新提出的问题。`smart-doc`的原理是使用源代码中的注释和泛型来分析生成文档。
@@ -137,7 +137,7 @@ public abstract class BaseResult<BR> implements Serializable {
 - 如果你使用`smart-doc`单元测试方式来生成文档，那么在单元测试代码中设置外部源代码路径。让`smart-doc`加载到源代码来分析。当然官方并不推荐使用单元测试，在多人开发的团队每个人电脑路径不一致，在规范的公司代码的打包通常使用自动化构建工具完成，设置代码路径不好维护。单元测试只适合于个人开发项目使用。
 - 如果你使用的`smart-doc-maven-plugin`或者是`smart-doc-gradle-plugin`。对于无法访问国外中央仓库下载第三方源码库的同学，请在`Maven`中配置国内的阿里云`Maven`仓库，即便你是使用自己公司的`Nexus`那么也请找相关管理人员给`Nexus`配置阿里云的仓库代码。
 最终目的是确保让插件通过你`Maven`环境指定的库能够加载到第三方库的`source `源码`jar`包。有源代码生成的文档效果就会更好。
-- 如果你是像上面一样使用了不太规范的泛型定义，分析结果也会不理想，那么请你按照[《smart-doc最佳实践》]（https://smart-doc-group.github.io/#/zh-cn/start/bestPractice）中的泛型定义规范了修改你的泛型定义。 
+- 如果你是像上面一样使用了不太规范的泛型定义，分析结果也会不理想，那么请你按照 [**《smart-doc最佳实践》**](https://smart-doc-group.github.io/#/zh-cn/start/bestPractice) 中的泛型定义规范了修改你的泛型定义。 
   
 **注意你不要祈求官方会去修改支持多字母泛型定义，`smart-doc`在为大家带来方便的同时，规范一直是我们坚守的信念。** 
 
@@ -150,7 +150,7 @@ public abstract class BaseResult<BR> implements Serializable {
 在单模块项目中，例如在`Idea`中使用`smart-doc`插件可以很容易的在`Idea`界面上去找到`maven`的工具视图并找到
 `smart-doc`插件来生成文档。但是在多模块项目中，这个就不行了，因为`smart-doc`的插件直接使用的是`maven`底层的
 `API`，这种使用底层`API`的好处是你可以在构建工具中直接出发`smart-doc`插件去生成文档。
-整个过程完成和使用`mvn`命令来构建多模是一样的，`gradle`插件也类似。由于官方[多模块demo](https://gitee.com/smart-doc-team/spring-boot-maven-multiple-module.git) 
+整个过程完成和使用`mvn`命令来构建多模是一样的，`gradle`插件也类似。由于官方 [多模块demo](https://gitee.com/smart-doc-team/spring-boot-maven-multiple-module.git) 
 都已经这过程做了说明因此你可以去看官方`demo`的`README`文档。
 
 当然这里也介绍一个构建编排的利器给你`Makefile`：

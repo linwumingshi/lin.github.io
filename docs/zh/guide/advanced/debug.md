@@ -56,7 +56,7 @@ public class WebConfig implements WebMvcConfigurer {
 > 如果采用服务器方式来访问页面，则无需配置。
 
 ### 界面效果
-![mock](https://github.com/smart-doc-group/smart-doc-group.github.io/raw/master/docs/_images/mock.png "1.png")
+![mock](/assets/mock.png "mock.png")
 
 ### debug页面调试
 在使用`smart-doc`生成的`html`调试页面做接口调试时，你可能会碰到一下问题，
@@ -65,7 +65,7 @@ public class WebConfig implements WebMvcConfigurer {
 `debug.js`是用于处理接口测试请求的，`search.js`是用于处理文档目录标题搜索的。源码都未做压缩，可以直接调试页面的`js`源码。
 调试操作参考如下图：
 
-![mock](https://github.com/smart-doc-group/smart-doc-group.github.io/raw/master/docs/_images/debug-console.png "1.png")
+![mock](/assets/debug-console.png "debug-console.png")
 
 
 > Swagger是通过侵入一个web接口模块到项目中实现了调试接口调试功能，由于smart-doc不侵入代码中，打包的代码中看不到任何smart-doc的
@@ -80,11 +80,11 @@ public class WebConfig implements WebMvcConfigurer {
 
 
 导入`json`到`Postma`n效果如下图：
-![输入图片说明](https://github.com/smart-doc-group/smart-doc-group.github.io/raw/master/docs/_images/postman-import.png "postman.png")
+![输入图片说明](/assets/postman-import.png "postman.png")
 
 ### postman中设置环境变量
 
-![输入图片说明](https://github.com/smart-doc-group/smart-doc-group.github.io/raw/master/docs/_images/postman-add-env.png "postman_set_env.png")
+![输入图片说明](/assets/postman-add-env.png "postman_set_env.png")
 **注意：** 在`Add Environment`中不要忘记给环境设置名称(例如：本地开发测试)，否则按上图不能保存成功。
 
 > smart-doc自动生成的Json文件会贴心的给在Postman中给填充上注释，如果你自己写了mock值也会携带进入，

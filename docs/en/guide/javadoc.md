@@ -2,11 +2,11 @@
 
 The original intention of `smart-doc` is to remove the intrusion of annotations by using javadoc document comments. Therefore, every additional function of smart-doc is to consider the native tags of javadoc. The following is an introduction to some javadoc tags used by smart-doc. .
 
-|  tag name   |  description   |
-| --- | --- |
-|  @param  | For the Spring Boot interface layer, for simple type parameters, you must write a comment description when using @param, and for Entity type smart-doc, it will not be checked.    |
-|  @deprecated  |Can be used in comments to mark that the interface is obsolete, and the effect is the same as the @Deprecated annotation|
-|  @apiNote | @apiNote is a new document tag for java, smart-doc uses @apiNote as a detailed description of the method, so you can use apiNote to write a long note. If a method does not write @apiNote annotation description, smart-doc directly uses the method default annotation to fill in|
+| tag name    | description                                                  |
+| ----------- | ------------------------------------------------------------ |
+| @param      | For the Spring Boot interface layer, for simple type parameters, you must write a comment description when using @param, and for Entity type smart-doc, it will not be checked. |
+| @deprecated | Can be used in comments to mark that the interface is obsolete, and the effect is the same as the @Deprecated annotation |
+| @apiNote    | @apiNote is a new document tag for java, smart-doc uses @apiNote as a detailed description of the method, so you can use apiNote to write a long note. If a method does not write @apiNote annotation description, smart-doc directly uses the method default annotation to fill in |
 
 
 # javadoc Usage
@@ -70,7 +70,7 @@ There are relatively few native Javadoc tags in Java, which cannot meet some usa
 | @download                 | @since smart-doc 2.0.1, the download tag is used to mark the file download method of the controller, and the file download test can be realized when the debug page is generated. And it supports to download the file with request header parameter test.                                                                                                                                                                                                                                                                                                                                         |
 | @page                     | @since smart-doc 2.0.2, the page tag is used to mark the controller method to indicate that the method is used to render and return a static page. If a test is initiated when the debug page is generated, the test page will automatically be opened in the browser. Label display page.                                                                                                                                                                                                                                                                                                         |
 | @ignoreParams             | @since smart-doc 2.1.0, ignoreParams tag is used to mark the parameters that do not want to be displayed in the document on the controller method, for example: @ignoreParams id name, multiple parameter names are separated by spaces                                                                                                                                                                                                                                                                                                                                                            |
-| @response                 | @since smart-doc 2.2.0, the response tag is marked on the controller method to allow you to define the returned json example by yourself. It is recommended to use it only when returning basic types, such as: Result<String> This generic type is a response of a simple primitive type.                                                                                                                                                                                                                                                                                                         |
+| @response                 | @since smart-doc 2.2.0, the response tag is marked on the controller method to allow you to define the returned json example by yourself. It is recommended to use it only when returning basic types, such as: `Result<String>` This generic type is a response of a simple primitive type.                                                                                                                                                                                                                                                                                                         |
 | @tag                      | @since 2.2.5, @tag is used to classify controller methods. You can assign methods under different controllers to multiple categories, and you can also directly assign controllers to one category or multiple categories.                                                                                                                                                                                                                                                                                                                                                                         |
 | @extension                | @since 3.0.3, @extension is marked on the controller method. it's used to support the extension feature of OpenApi. it will add a "x-*" attribution for openapi.json                                                                                                                                                                                                                                                                                                                                                                                                                               |
 
@@ -114,11 +114,12 @@ In the future, @ignore will only be used in method and class comments.
 
 In the Controller layer, use SubUser as a parameter to receive, and the parameter request document output by smart-doc:
 
-| Parameter | Type | Description | Required |
-| --- | --- | --- | --- |
-| subUserName | string | user name | false |
-| idCard | string | ID card | false |
-| gender | int | gender | false|
+| Parameter   | Type   | Description | Required |
+| ---         | ---    | ---         | ---      |
+| subUserName | string | user name   | false    |
+| idCard      | string | ID card     | false    |
+| gender      | int    | gender      | false    |
+
 
 ## 2.2 @mock use
 
@@ -139,15 +140,15 @@ public class SimpleUser {
      * @since v1.0
      */
     private String password;
-
 }
+
 ```
 In the Controller layer, SimpleUser is used as a parameter to receive, and smart-doc no longer uses random values. Example of parameter request output by smart-doc:
 
 ```json
 {
-    "username": "Bob",
-    "password": "12356"
+  "username": "Bob",
+  "password": "12356"
 }
 ```
 
@@ -181,19 +182,20 @@ public abstract class BaseController {
      * @param fileName fileName(userInfo.xls)
      * @param response HttpServletResponse
      * @return ServletOutputStream
-     * @throws Exception
+     * @throws Exception Exception
      */
     protected ServletOutputStream exportExcel(String fileName, HttpServletResponse response) throws IOException {
-        return baseDownload(EXCEL_CONTENT_TYPE,fileName,response);
+        return baseDownload(EXCEL_CONTENT_TYPE, fileName, response);
     }
 
     /**
      * Basic file download
+     *
      * @param contentType Type of download file
-     * @param fileName
-     * @param response
-     * @return
-     * @throws IOException
+     * @param fileName    fileName
+     * @param response    response
+     * @return ServletOutputStream
+     * @throws IOException IOException
      */
     protected ServletOutputStream baseDownload(String contentType, String fileName, HttpServletResponse response)
             throws IOException {
@@ -205,13 +207,14 @@ public abstract class BaseController {
 
     /**
      * Download file
+     *
      * @param fileName download file
      * @param response response
-     * @return
-     * @throws IOException
+     * @return ServletOutputStream
+     * @throws IOException IOException
      */
-    protected ServletOutputStream downloadText(String fileName,HttpServletResponse response) throws IOException{
-        return baseDownload(TEXT_CONTENT_TYPE,fileName,response);
+    protected ServletOutputStream downloadText(String fileName, HttpServletResponse response) throws IOException {
+        return baseDownload(TEXT_CONTENT_TYPE, fileName, response);
     }
 
 }
@@ -419,7 +422,7 @@ it will output extension tags in openapi.json:
 
 # IDEA custom tag prompt
 The custom tag is not automatically prompted by default, and requires the user to set it in the idea. You can use it after setting it up. The following takes the setting of smart-doc custom mock tag as an example. The setting operation is as follows:
-![idea设置自定义tag提示](../../_images/234135_8477cd9b_144669.png "idea_tag.png")
+![idea设置自定义tag提示](/assets/idea_tag.png "idea_tag.png")
 
 Users who use other development tools should find the custom tag prompt settings of related tools by themselves.
 

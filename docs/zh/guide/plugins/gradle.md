@@ -186,7 +186,7 @@ dependencies {
 ### 命令行终端设置debug模式
 `Gradle`插件的调试并不像调试`JAVA`程序和`Maven`插件那么简单。在`IDEA`上直接点击`debug`启动相关操作就可以直接调试了。
 需要实现在命令行设置调试模式。操作如下图：
-![设置debug模式](/assets/_images/003046_3cb24659_144669.png "debug2.png")
+![设置debug模式](/assets/003046_3cb24659_144669.png "debug2.png")
 图中主要是打开命令行终端指定让`smart-doc-gradle-plugin`的某一个`task`使用`debug`模式运行, 
 如上图所示指定构建`html`文档的`task`来开启`debug`模式，命令示例如下：
 
@@ -204,9 +204,9 @@ gradle wrapper
 ```
 ### 添加一个远程调试监听
 点击 **Edit Configurations**
-![输入图片说明](/assets/_images/004033_cd63df34_144669.png "remote1.png")
+![输入图片说明](/assets/004033_cd63df34_144669.png "remote1.png")
 点开左边的"**+**"号，点击"**Remote**"
-![添加remote](/assets/_images/set-gradle-debug-name.png "remote2.png")
+![添加remote](/assets/set-gradle-debug-name.png "remote2.png")
 ### 执行调试
 完成上面的操作后即可用`debug`调试进入插件和`smart-doc`了，然后查看`smart-doc`的执行情况。操作如下图
-![执行调试](/assets/_images/gradle-run-debug.png "debug3.png")
+![执行调试](/assets/gradle-run-debug.png "debug3.png")

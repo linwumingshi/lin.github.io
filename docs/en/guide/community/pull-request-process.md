@@ -7,7 +7,7 @@
 
 To prevent conflicts caused by changes in the upstream repository, you should `sync fork` before making a `pr`, and resolve conflicts (try to resolve conflicts locally).
 
-![image](https://github.com/smart-doc-group/smart-doc-group.github.io/assets/50514081/3541425d-19fe-4ab6-8a2a-d23057142ea9)
+![image](/assets/sync-fork.png)
 
 ## 2. Sync from Remote Repository && Resolve Conflicts Locally
 1. Use the `git pull` command locally to sync code from the remote repository
@@ -26,14 +26,14 @@ To prevent conflicts caused by changes in the upstream repository, you should `s
 
 1. **Create a pull request**
 
-![image](https://github.com/smart-doc-group/smart-doc-group.github.io/assets/50514081/0be96dfd-6a78-495b-8618-49994f417f93)
+![image](/assets/create-full-pequest.png)
 
 2. **Fill in the title and comment carefully**. The `title` briefly describes your intention, and the `comment` provides a detailed description of the process. You can refer to closed `pr`s.
 
-![image](../../_images/pr.png)
+![image](/assets/pr.png)
 
 3. **Handle reviews**. If your `pull request` is perfect, it will be directly accepted by the community. If the community `review` finds issues, there will be comments, and we can discuss directly. After the issue is resolved, click `Resolve conversation`.
 
-![1698071332712](https://github.com/smart-doc-group/smart-doc-group.github.io/assets/50514081/9625c152-0eeb-4dd9-91d0-1f38a053bc1a)
+![1698071332712](/assets/handle-reviews.png)
 
 > Note: If multiple commits occur during the problem-solving period, we need to use the rebase command to merge commits!

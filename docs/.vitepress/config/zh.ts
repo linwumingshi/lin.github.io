@@ -1,8 +1,8 @@
 import {createRequire} from 'module'
 import {type DefaultTheme, defineConfig} from 'vitepress'
 
-const require = createRequire(import.meta.url)
-const pkg = require('vitepress/package.json')
+// const require = createRequire(import.meta.url)
+// const pkg = require('vitepress/package.json')
 
 export const zh = defineConfig({
     lang: 'zh-Hans',
@@ -90,7 +90,7 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             collapsed: false,
             items: [
                 { text: 'Torna', link: 'integrated/torna' },
-                { text: 'Dubbo', link: 'integrated/dubbo.md' },
+                { text: 'Dubbo', link: 'integrated/dubbo' },
                 { text: 'JAX-RS', link: 'integrated/jax-rs' },
                 { text: 'JMeter', link: '/integrated/jmeter' },
             ]
@@ -108,9 +108,9 @@ function sidebarGuide(): DefaultTheme.SidebarItem[] {
             collapsed: false,
             items: [
                 { text: '常见问题', link: 'faq/faq' },
+                { text: '反馈', link: 'faq/feedback' }
             ]
         },
-        { text: 'FAQ', base: '/zh/reference/', link: 'site-config' },
         {
             text: '社区',
             collapsed: false,

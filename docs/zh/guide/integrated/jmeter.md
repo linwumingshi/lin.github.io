@@ -9,7 +9,7 @@
 
 `maven`插件操作参看
 
-![idea-jmeter](/assets/_images/idea-jmeter.png)
+![idea-jmeter](/assets/idea-jmeter.png)
 
 从`3.0.4`版本开始新增了添加`Prometheus Listener`的功能，如果需要添加`Prometheus Listener`，则需要在`smart-doc.json`中添加`addPrometheusListener`配置。
 
@@ -28,4 +28,4 @@
 
 将`smart-doc`生成的脚本导入`JMeter`后根据自己情况调整下即可测试。
 
-![jmeter-example.png](/assets/_images/jmeter-example.png)
+![jmeter-example.png](/assets/jmeter-example.png)
