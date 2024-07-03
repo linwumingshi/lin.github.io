@@ -54,6 +54,9 @@ export const shared = defineConfig({
 
         search: {
             provider: 'local',
+            options: {
+                locales: { ...zhSearch }
+            }
         },
     }
 })
