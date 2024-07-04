@@ -103,27 +103,163 @@ revisionLogs|array|文档变更记录|-
 
 
 
- ## 其他框架文档解析开发
+## ~~其他框架文档解析开发~~
+:::warning
+`@since 3.0.6` 之后，可以不修改源码了~
+:::
 
-
- `smart-doc`目前支持`Spring`技术栈`Web`和`Apache Dubbo`层面的解析。由于官方开源人力有限，因此无法去满足解析其他的`web`层框架。
+`smart-doc`目前支持`Spring`技术栈`Web`和`Apache Dubbo`层面的解析。由于官方开源人力有限，因此无法去满足解析其他的`web`层框架。
 当然要`Web`层面的框架，一般需要框架需要满足下面的条件：
 - 框架使用明确的注解路由(通俗就是说类似`Spring`的`Controller`有明确的注解申明`path`路径)，也可以是类似`Jakarta RS-API 2.x`规范的实现框架。
 
-目前有2种方案。
-方案一：引入依赖以及插件依赖；方案二
 下面来看下实现支持编写。
-
-### 方案一
 
 ### 编写框架的文档构建解析实现模板
 这里拿当前`Java`比较火的一个云原生框架`Quarkus`为例。如果在`smart-doc`上支持`Quarkus`。
-那么首先在`smart-doc`的`com.power.doc.template`包下新建一个`QuarkusDocBuildTemplate`, 
-`QuarkusDocBuildTemplate`实现`IDocBuildTemplate`接口，如果要获取`WeSocket`文档，那么需要实现`IWebSocketDocBuildTemplate`接口。代码如下：
+那么首先在`smart-doc`的`com.power.doc.template`包下新建一个`QuarkusDocBuildTemplate`, `QuarkusDocBuildTemplate`实现`IDocBuildTemplate`接口。代码如下：
 
 ```java
 /**
  * @author yu 2021/6/28.
+ */
+public class QuarkusDocBuildTemplate implements IDocBuildTemplate<ApiDoc>{
+
+    /**
+     * 生成整个项目的文档数据
+     * @param projectBuilder
+     * @return
+     */
+    @Override
+    public List<ApiDoc> getApiData(ProjectDocConfigBuilder projectBuilder) {
+        return null;
+    }
+
+    /**
+     * 生成单个接口类的文档(不要求实现，官方不支持)
+     * @param projectBuilder
+     * @param apiClassName
+     * @return
+     */
+    @Override
+    public ApiDoc getSingleApiData(ProjectDocConfigBuilder projectBuilder, String apiClassName) {
+        return null;
+    }
+
+    @Override
+    public boolean ignoreReturnObject(String typeName, List<String> ignoreParams) {
+        return false;
+    }
+}
+```
+然后自己结合`Quarkus`的使用和参照目前的`SpringBootDocBuildTemplate`实现把`QuarkusDocBuildTemplate`生成接口数据的实现补充完整。
+
+### 修改框架支持枚举
+修改`com.power.doc.constants`中的`FrameworkEnum`, 添加`Quarkus`。
+
+```java
+/**
+ * Smart-doc Supported Framework
+ *
+ * @author yu 2021/6/27.
+ */
+public enum FrameworkEnum {
+
+    /**
+     * Apache Dubbo
+     */
+    DUBBO("dubbo", "com.power.doc.template.RpcDocBuildTemplate"),
+
+    /**
+     * Spring Framework
+     */
+    SPRING("spring", "com.power.doc.template.SpringBootDocBuildTemplate"),
+
+    /**
+     * Quarkus Framework
+     */
+    QUARKUS("quarkus","com.power.doc.template.QuarkusDocBuildTemplate");
+
+    // 省略多行
+
+}
+```
+
+### 使用新添加的框架解析
+然后在项目中使用`smart-doc`时配置自己使用的框架名称。`smart-doc`默认是`Spring`, 因此新加的框架使用时需要配置中指定。
+
+```json
+{
+  "serverUrl": "http://127.0.0.1",
+  "isStrict": false,
+  "allInOne": true,
+  "outPath": "D://md2",
+  "framework": "quarkus"
+}
+```
+开发流程就是这样，主要的难点在于`IDocBuildTemplate`的实现处理。
+
+
+## 其他框架文档解析开发（基于`JAVA SPI`） `@since 3.0.6`
+:::tip
+`@since 3.0.6` 开始，支持不修改源码的情况下，新增其他框架文档的解析🎉
+:::
+
+目前支持`Spring`技术栈`Web`、`Apache 
+Dubbo`层面的解析。由于官方开源人力有限，因此无法去满足解析其他的`web`层框架。
+当然要`Web`层面的框架，一般需要框架需要满足下面的条件：
+- 框架使用明确的注解路由(通俗就是说类似`Spring`的`Controller`有明确的注解申明`path`路径)，也可以是类似`Jakarta RS-API 2.x`规范的实现框架。
+
+
+下面来看下实现支持编写。
+
+### 方案一：插件引入开发
+在maven插件引入对应的扩展依赖完成扩展。
+#### 核心代码编写
+新增一个模块或项目，引入`smart-doc`依赖
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.test</groupId>
+    <artifactId>smart-doc-extend</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ly.smart-doc</groupId>
+            <artifactId>smart-doc</artifactId>
+            <version>[最新版]</version>
+        </dependency>
+    </dependencies>
+</project>
+ ```
+实现`com.power.doc.spi.DocBuildTemplate`接口，如果要获取`WebSocket`文档，则实现`com.ly.doc.template.IWebSocketDocBuildTemplate`接口，并实现相关方法, 
+示例代码如下：
+```java
+package com.github.linwumingshi;
+
+import com.ly.doc.builder.ProjectDocConfigBuilder;
+import com.ly.doc.model.ApiDoc;
+import com.ly.doc.model.ApiSchema;
+import com.ly.doc.model.annotation.FrameworkAnnotations;
+import com.ly.doc.template.IDocBuildTemplate;
+import com.thoughtworks.qdox.model.JavaClass;
+
+import java.util.Collection;
+
+/**
+ * QuarkusDocBuildTemplate.
+ *
+ * @author linwumingshi
+ * @version 1.0.0
+ * @since 2024-07-02 13:43:50
  */
 public class QuarkusDocBuildTemplate implements IDocBuildTemplate<ApiDoc> {
 
@@ -147,7 +283,9 @@ public class QuarkusDocBuildTemplate implements IDocBuildTemplate<ApiDoc> {
      */
     @Override
     public boolean supportsFramework(String framework) {
-        return "quarkus".equalsIgnoreCase(framework);
+        System.out.println("com.github.linwumingshi.QuarkusDocBuildTemplate.supportsFramework");
+        // 匹配
+        return "Quarkus".equalsIgnoreCase(framework);
     }
 
     /**
@@ -172,22 +310,40 @@ public class QuarkusDocBuildTemplate implements IDocBuildTemplate<ApiDoc> {
         return false;
     }
 }
+
 ```
-然后自己结合`Quarkus`的使用和参照目前的`SpringBootDocBuildTemplate`实现把`QuarkusDocBuildTemplate`生成接口数据的实现补充完整。
 
-### 增加SPI配置文件
-在`src/main/resources/META-INF/services/com.ly.doc.template.
-IDocBuildTemplate`文件，增加一行`QuarkusDocBuildTemplate`类的全限定名;
+然后在 `resources/META-INF/services/com.ly.doc.spi.DocBuildTemplate` 文件中添加实现类的全类名。如果是`WebSocket`文档则在`resources/META-INF/services/com.ly.doc.template.IWebSocketDocBuildTemplate` 文件中添加实现类的全类名。
 
-`com.demo.QuarkusDocBuildTemplate`
+#### 安装或部署
+将项目打包成`jar`包，并安装到本地仓库或发布到远程仓库。
 
-`WebSocket`的实现类同理,在`src/main/resources/META-INF/services/com.ly.doc.template.
-IWebSocketDocBuildTemplate`文件，增加一行实现类的全限定名。
+#### 使用新添加的框架解析
+调整 `smart-doc-maven-plugin` 插件依赖配置，新增上述项目的依赖：
+```xml
+      <plugin>
+        <groupId>com.ly.smart-doc</groupId>
+        <artifactId>smart-doc-maven-plugin</artifactId>
+        <version>[最新版]</version>
+        <configuration>
+          <!--指定生成文档的使用的配置文件-->
+          <configFile>./src/main/resources/smart-doc.json</configFile>
+          <!--指定项目名称-->
+          <projectName>测试</projectName>
+        </configuration>
+        <dependencies>
+        <dependency>
+            <!--引入上一步安装或部署的新增模块-->
+            <groupId>com.github.test</groupId>
+            <artifactId>smart-doc-extend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+      </plugin>
+```
 
-
-### 使用新添加的框架解析
-然后在项目中使用`smart-doc`时配置自己使用的框架名称。`smart-doc`默认是`Spring`, 因此新加的框架使用时需要配置中指定。
-
+在项目中使用 `smart-doc` 时配置所使用的框架名称。默认情况下，`smart-doc` 使用 `Spring`，因此新加的框架需在配置文件中指定：
+`smart-doc.json` 文件中修改 `framework` 配置：
 ```json
 {
   "serverUrl": "http://127.0.0.1",
@@ -199,4 +355,123 @@ IWebSocketDocBuildTemplate`文件，增加一行实现类的全限定名。
 ```
 开发流程就是这样，主要的难点在于`IDocBuildTemplate`的实现处理。
 
+### 方案二：集成式开发
+集成依赖进行扩展
+#### 核心代码编写
+新增一个模块或项目，引入`smart-doc`依赖以及`smart-doc-maven-plugin`插件
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
+    <groupId>com.github.test</groupId>
+    <artifactId>smart-doc-extend</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ly.smart-doc</groupId>
+            <artifactId>smart-doc</artifactId>
+            <version>[最新版]</version>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.ly.smart-doc</groupId>
+                <artifactId>smart-doc-maven-plugin</artifactId>
+                <version>[最新版]</version>
+                <configuration>
+                    <!--指定生成文档的使用的配置文件-->
+                    <configFile>./src/main/resources/smart-doc.json</configFile>
+                    <!--指定项目名称-->
+                    <projectName>测试</projectName>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+ ```
+实现`com.power.doc.spi.DocBuildTemplate`接口，如果要获取`WebSocket`文档，则实现`com.ly.doc.template.IWebSocketDocBuildTemplate`接口，并实现相关方法,
+```java
+package com.github.linwumingshi;
+
+import com.ly.doc.builder.ProjectDocConfigBuilder;
+import com.ly.doc.model.ApiDoc;
+import com.ly.doc.model.ApiSchema;
+import com.ly.doc.model.annotation.FrameworkAnnotations;
+import com.ly.doc.template.IDocBuildTemplate;
+import com.thoughtworks.qdox.model.JavaClass;
+
+import java.util.Collection;
+
+/**
+ * QuarkusDocBuildTemplate.
+ *
+ * @author linwumingshi
+ * @version 1.0.0
+ * @since 2024-07-02 13:43:50
+ */
+public class QuarkusDocBuildTemplate implements IDocBuildTemplate<ApiDoc> {
+
+    /**
+     * render api
+     *
+     * @param projectBuilder   ProjectDocConfigBuilder
+     * @param candidateClasses candidate classes
+     * @return api ApiSchema
+     */
+    @Override
+    public ApiSchema<ApiDoc> renderApi(ProjectDocConfigBuilder projectBuilder, Collection<JavaClass> candidateClasses) {
+        return null;
+    }
+
+    /**
+     * support framework.
+     *
+     * @param framework framework
+     * @return boolean
+     */
+    @Override
+    public boolean supportsFramework(String framework) {
+        System.out.println("com.github.linwumingshi.QuarkusDocBuildTemplate.supportsFramework");
+        // 匹配
+        return "Quarkus".equalsIgnoreCase(framework);
+    }
+
+    /**
+     * registered annotations.
+     *
+     * @return registered annotations
+     */
+    @Override
+    public FrameworkAnnotations registeredAnnotations() {
+        return null;
+    }
+
+    /**
+     * is entry point.
+     *
+     * @param javaClass            javaClass
+     * @param frameworkAnnotations frameworkAnnotations
+     * @return is entry point
+     */
+    @Override
+    public boolean isEntryPoint(JavaClass javaClass, FrameworkAnnotations frameworkAnnotations) {
+        return false;
+    }
+}
+
+```
+
+然后在 `resources/META-INF/services/com.ly.doc.spi.DocBuildTemplate` 文件中添加实现类的全类名。如果是`WebSocket`文档则在`resources/META-INF/services/com.ly.doc.template.IWebSocketDocBuildTemplate` 文件中添加实现类的全类名。
+
+#### 使用新添加的框架解析
+示例配置同方案一 [使用新添加的框架解析](#使用新添加的框架解析-1)。

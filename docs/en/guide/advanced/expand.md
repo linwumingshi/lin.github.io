@@ -104,7 +104,9 @@ The field information is as follows:
 
 
 ## Other framework document parsing and development
-
+:::warning
+`@since 3.0.6`, you don't need to modify the source code~
+:::
 
 `smart-doc` currently supports parsing at the `Web` and `Apache Dubbo` levels of the `Spring` technology stack. Due to limited official open source manpower, it is unable to parse other `web` layer frameworks.
 Of course, a `Web` level framework is required. Generally, the framework needs to meet the following conditions:
@@ -192,3 +194,216 @@ Then configure the framework name you use when using `smart-doc` in your project
 }
 ```
 The development process is like this. The main difficulty lies in the implementation of `IDocBuildTemplate`.
+
+## Other Framework Documentation Parsing Development (Based on `JAVA SPI`) `@since 3.0.6`
+:::tip
+Starting from version `3.0.6`, it is possible to add document parsing for other frameworks without modifying the source code 🎉
+:::
+
+Currently, it supports the `Spring` technology stack for `Web` and `Apache Dubbo`. Due to limited resources, the official open-source team cannot cover other `web` layer frameworks. However, to support `Web` layer frameworks, they generally need to meet the following conditions:
+- The framework uses explicit annotation routing (similar to how `Spring`'s `Controller` has clearly declared `path` paths with annotations) or follows the `Jakarta RS-API 2.x` specification.
+
+Here's how to implement support for other frameworks.
+
+### Option 1: Plugin Integration Development
+
+#### Core Code Implementation
+Create a new module or project and include the `smart-doc` dependency:
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.test</groupId>
+    <artifactId>smart-doc-extend</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ly.smart-doc</groupId>
+            <artifactId>smart-doc</artifactId>
+            <version>[latest version]</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+Implement the `com.power.doc.spi.DocBuildTemplate` interface and its relevant methods. For example:
+```java
+package com.github.linwumingshi;
+
+import com.ly.doc.builder.ProjectDocConfigBuilder;
+import com.ly.doc.model.ApiDoc;
+import com.ly.doc.model.ApiSchema;
+import com.ly.doc.model.annotation.FrameworkAnnotations;
+import com.ly.doc.template.IDocBuildTemplate;
+import com.thoughtworks.qdox.model.JavaClass;
+
+import java.util.Collection;
+
+/**
+ * QuarkusDocBuildTemplate.
+ *
+ * @version 1.0.0
+ * @since 2024-07-02 13:43:50
+ */
+public class QuarkusDocBuildTemplate implements IDocBuildTemplate<ApiDoc> {
+
+    @Override
+    public ApiSchema<ApiDoc> renderApi(ProjectDocConfigBuilder projectBuilder, Collection<JavaClass> candidateClasses) {
+        return null;
+    }
+
+    @Override
+    public boolean supportsFramework(String framework) {
+        return "Quarkus".equalsIgnoreCase(framework);
+    }
+
+    @Override
+    public FrameworkAnnotations registeredAnnotations() {
+        return null;
+    }
+
+    @Override
+    public boolean isEntryPoint(JavaClass javaClass, FrameworkAnnotations frameworkAnnotations) {
+        return false;
+    }
+}
+```
+
+Then, add the full class name of the implementation in the `resources/META-INF/services/com.ly.doc.spi.DocBuildTemplate` file.
+
+#### Installation or Deployment
+Package the project into a `jar` file and install it into the local repository or publish it to a remote repository.
+
+#### Using the Newly Added Framework Parsing
+Adjust the `smart-doc-maven-plugin` plugin dependency configuration to add the above project dependency:
+```xml
+<plugin>
+    <groupId>com.ly.smart-doc</groupId>
+    <artifactId>smart-doc-maven-plugin</artifactId>
+    <version>[latest version]</version>
+    <configuration>
+        <!-- Specify the configuration file for generating documents -->
+        <configFile>./src/main/resources/smart-doc.json</configFile>
+        <!-- Specify the project name -->
+        <projectName>Test</projectName>
+    </configuration>
+    <dependencies>
+        <dependency>
+            <!-- Include the newly added module installed or deployed in the previous step -->
+            <groupId>com.github.test</groupId>
+            <artifactId>smart-doc-extend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+</plugin>
+```
+
+When using `smart-doc` in the project, configure the framework name to be used. By default, `smart-doc` uses `Spring`, so the newly added framework must be specified in the configuration file:
+Modify the `framework` configuration in the `smart-doc.json` file:
+```json
+{
+  "serverUrl": "http://127.0.0.1",
+  "isStrict": false,
+  "allInOne": true,
+  "outPath": "D://md2",
+  "framework": "quarkus"
+}
+```
+This is the development process, with the main difficulty lying in the implementation of `IDocBuildTemplate`.
+
+### Option 2: Integrated Development
+
+#### Core Code Implementation
+Create a new module or project and include the `smart-doc` dependency as well as the `smart-doc-maven-plugin` plugin:
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.github.test</groupId>
+    <artifactId>smart-doc-extend</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ly.smart-doc</groupId>
+            <artifactId>smart-doc</artifactId>
+            <version>[latest version]</version>
+        </dependency>
+    </dependencies>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.ly.smart-doc</groupId>
+                <artifactId>smart-doc-maven-plugin</artifactId>
+                <version>[latest version]</version>
+                <configuration>
+                    <!-- Specify the configuration file for generating documents -->
+                    <configFile>./src/main/resources/smart-doc.json</configFile>
+                    <!-- Specify the project name -->
+                    <projectName>Test</projectName>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+Implement the `com.power.doc.spi.DocBuildTemplate` interface and its relevant methods. For example:
+```java
+package com.github.linwumingshi;
+
+import com.ly.doc.builder.ProjectDocConfigBuilder;
+import com.ly.doc.model.ApiDoc;
+import com.ly.doc.model.ApiSchema;
+import com.ly.doc.model.annotation.FrameworkAnnotations;
+import com.ly.doc.template.IDocBuildTemplate;
+import com.thoughtworks.qdox.model.JavaClass;
+
+import java.util.Collection;
+
+/**
+ * QuarkusDocBuildTemplate.
+ *
+ * @version 1.0.0
+ * @since 2024-07-02 13:43:50
+ */
+public class QuarkusDocBuildTemplate implements IDocBuildTemplate<ApiDoc> {
+
+    @Override
+    public ApiSchema<ApiDoc> renderApi(ProjectDocConfigBuilder projectBuilder, Collection<JavaClass> candidateClasses) {
+        return null;
+    }
+
+    @Override
+    public boolean supportsFramework(String framework) {
+        return "Quarkus".equalsIgnoreCase(framework);
+    }
+
+    @Override
+    public FrameworkAnnotations registeredAnnotations() {
+        return null;
+    }
+
+    @Override
+    public boolean isEntryPoint(JavaClass javaClass, FrameworkAnnotations frameworkAnnotations) {
+        return false;
+    }
+}
+```
+
+Then, add the full class name of the implementation in the `resources/META-INF/services/com.ly.doc.spi.DocBuildTemplate` file.
+
+#### Using the Newly Added Framework Parsing
+The example configuration is the same as Option 1. See [using-the-newly-added-framework-parsing](#using-the-newly-added-framework-parsing)。
