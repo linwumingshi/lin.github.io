@@ -25,14 +25,14 @@ The most direct way to improve the speed is to configure it in the plug-in: `inc
 For detailed configuration of key plug-ins, please refer to the plug-in usage section of the plug-in documentation for details.
 
 
-## The difference between smart-doc and swagger
-Especially novices must understand the essential difference between `smart-doc` and `swagger`:
+## The difference between smart-doc and Swagger
+Especially novices must understand the essential difference between 
+`smart-doc` and `Swagger`:
 - `smart-doc` mainly generates documents based on source code and `JAVADOC` annotation. It is generated during the development period or the compilation period of the project.
 You cannot find the dependency of `smart-doc` in the `jar` that is finally packaged and run, so it does not invade the project runtime at all.
-It also means that you cannot update the document when the project starts like `swagger`.
+It also means that you cannot update the document when the project starts like `Swagger`.
   
-- The main principle of `swagger` is to use the annotation and reflection mechanism of `JAVA` to generate documents. If the project documentation is to be clear, a large number of annotations must be used.
-Annotations are strongly bound to business code. Of course, the deployment package produced by the final build must also contain the dependency of `swagger`. Also because `swagger` uses reflection
+- The main principle of `Swagger` is to use the annotation and reflection mechanism of `JAVA` to generate documents. If the project documentation is to be clear, a large number of annotations must be used. Annotations are strongly bound to business code. Of course, the deployment package produced by the final build must also contain the dependency of `Swagger`. Also because `Swagger` uses reflection
 to generate documentation, so the documentation can be updated when the project is started.
  
 > Some students who are new to the industry may have some questions here. They often ask why I wrote comments.
@@ -267,7 +267,7 @@ If you are still unclear, you can directly refer to the `pom.xml` configuration 
 
 **Note:** After testing, it has been verified that if you just install it locally, even if you specify `sources`, you cannot read the source code. You can only `deploy` the public module to a private server such as `nexus`. Normal use.
 
-### How to access documents like swagger?
+### How to access documents like Swagger?
 
 To access the document, do the following two steps:
 

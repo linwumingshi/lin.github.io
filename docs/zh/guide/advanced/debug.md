@@ -90,7 +90,7 @@ public class WebConfig implements WebMvcConfigurer {
 > smart-doc自动生成的Json文件会贴心的给在Postman中给填充上注释，如果你自己写了mock值也会携带进入，
 远比自己手动填省心多了
 
-## `swagger UI`集成
+## `Swagger UI`集成
 
 `smart-doc`支持生成`OpenAPI 3.0+`规范的接口文档，因此你可以使用支持`OpenAPI 3.0+`规范的文档管理系统或者`UI`界面来
 展示`smart-doc`生成的文档。 本文来说下如何快速集成`Swagger UI`来在开发中测试你的接口。
