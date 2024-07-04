@@ -3,7 +3,7 @@ import {type DefaultTheme, defineConfig} from 'vitepress'
 
 export const zh = defineConfig({
     lang: 'zh-Hans',
-    description: '由 Vite 和 Vue 驱动的静态站点生成器',
+    description: 'Smart-Doc 官方文档',
 
     themeConfig: {
         carbonAds: undefined,
@@ -20,7 +20,7 @@ export const zh = defineConfig({
 
         footer: {
             message: '基于 MIT 许可发布',
-            copyright: `版权所有 © 2018-${new Date().getFullYear()} smart-doc`
+            copyright: `版权所有 © 2024-${new Date().getFullYear()} smart-doc`
         },
 
         docFooter: {

@@ -18,10 +18,22 @@ hero:
       text: GitHub
       link: https://github.com/TongchengOpenSource/smart-doc
     
-
 features:
-  - title: 🗂️ Product Introduction
-    details: Smart-doc is a java restful api document generation tool.Smart-doc is based on interface source code analysis to generate interface documentation, completely zero-injection.
+  - icon: 📝️
+    title: Zero Intrusion
+    details: Generate documentation entirely based on annotations, achieving zero code intrusion.
+  - icon: 🔗
+    title: Interface Diversity
+    details: Supports documentation for JAVA RESTful APIs, JAVA WebSocket, and Apache Dubbo RPC interfaces.
+  - icon: 🔧
+    title: Framework Diversity
+    details: Supports multiple frameworks including Torna, Spring Boot, JAX-RS, and Solon.
+  - icon: 📚
+    title: Rich Documentation
+    details: Capable of generating documentation in various formats such as HTML, Asciidoc, Markdown, OpenAPI, Swagger, Postman, and Word
+  - icon: 🔌
+    title: Extendable
+    details: Allows users to extend supported frameworks using Java SPI.
 ---
 
 

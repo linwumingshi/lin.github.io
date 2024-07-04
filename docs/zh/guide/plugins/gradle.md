@@ -1,23 +1,23 @@
 # Gradle
 
-## Introduce
+## 简介
 `smart-doc-gradle-plugin`是`smart-doc`官方团队开发的`gradle`插件，该插件从`smart-doc 1.8.6`版本开始提供，
 使用`smart-doc-gradle-plugin`更方便用户集成到自己的项目中，集成也更加轻量，你不再需要在项目中编写单元测试来
 启动`smart-doc`扫描代码分析生成接口文档。可以直接运行`gradle`命令
 或者是`IDEA`中点击`smart-doc-gradle-plugin`预设好的`task`即可生成接口文档。
 
 
-## Getting started
-### Add plugin
+## 快速开始
+### 添加插件
 `Gradle`中添加插件有两种方式: 一种是`DSL`，高版本`Gradle`推荐直接使用`DSL`，另一种是`legacy`。
-#### Using the plugins DSL
+#### 使用 plugins DSL
 
 ```gradle
 plugins {
   id "com.ly.smart-doc" version "[最新版本]"
 }
 ```
-#### Using legacy plugin application
+#### 使用旧版插件应用程序
 
 ```gradle
 buildscript {
@@ -41,7 +41,7 @@ apply(plugin = "com.ly.smart-doc")
 ```
 
 **`buildscript`配置添加到`build.gradle`的顶部** 。
-### Plugin options
+### 插件 options
 使用`smart-doc`插件还需要在`build.gradle`添加一些常见本身的配置
 
 | Option | Default value | Required| Description                                                                                     |
@@ -50,7 +50,7 @@ apply(plugin = "com.ly.smart-doc")
 |exclude|无|`false`| 排除一些无法自动下载的`java lib sources`,例如:`exclude 'org.springframework.boot:spring-boot-starter-tomcat'` |
 |include|无|`false`| 让插件自定下载指定的`java lib sources`,例如:`include 'org.springframework.boot:spring-boot-starter-tomcat'`   |
 
-Example setting of options:
+options配置示例:
 ```gradle
 smartdoc {
     configFile = file("src/main/resources/smart-doc.json")
@@ -105,7 +105,7 @@ subprojects{
 https://gitee.com/smart-doc-team/smart-doc-gradle-plugin-demo
 ```
 > 多模块和单模块项目是有区别，多模块不从根目录使用命令构建可能会导致模块间源代码加载失败，生成文档出现各种问题。
-### Create a json config
+### configFile
 在自己的项目中创建一个`json`配置文件，如果是多个模块则放到需要生成文档的模块中，`smart-doc-gradle-plugin`插件会根据这个配置生成项目的接口文档。
 例如在项目中创建`/src/main/resources/smart-doc.json`。配置内容参考如下。
 
@@ -116,8 +116,8 @@ https://gitee.com/smart-doc-team/smart-doc-gradle-plugin-demo
 }
 ```
 
-### Generated document
-#### Use Gradle command
+### 运行插件生成文档
+#### 使用 Gradle 命令
 ```bash
 //生成文档到html中
 gradle smartDocRestHtml
@@ -155,7 +155,7 @@ gradle javadocMarkdown
 // Generate adoc
 gradle javadocAdoc
 ```
-#### Use IDEA
+#### 使用 IDEA
 当你使用`Idea`时，可以通过`Gradle Helper`插件选择生成何种文档。
 
 ![idea中smart-doc-gradle插件使用](https://github.com/smart-doc-group/smart-doc-group.github.io/raw/master/docs/_images/idea-gradle-plugin.png "usage.png")

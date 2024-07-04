@@ -2,7 +2,7 @@ import {type DefaultTheme, defineConfig} from 'vitepress'
 
 export const en = defineConfig({
     lang: 'en-US',
-    description: 'Vite & Vue powered static site generator.',
+    description: 'Smart-Doc Official Documentation',
 
     themeConfig: {
         carbonAds: undefined,
@@ -19,7 +19,7 @@ export const en = defineConfig({
 
         footer: {
             message: 'Released under the MIT License.',
-            copyright: 'Copyright © 2019-present Evan You'
+            copyright: 'Copyright © 2024-present smart-doc'
         }
     }
 })

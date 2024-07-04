@@ -5,8 +5,8 @@ layout: home
 hero:
   title: Smart-Doc
   name: Smart-Doc
-  text: "一个无侵入式的api接口文档生成器"
-  tagline: 一款同时支持JAVA RESTful API和Apache Dubbo RPC接口文档生成的工具。完全基于注释生成文档，做到零侵入
+  text: "无侵入式的API接口文档生成器"
+  tagline: 同时支持JAVA RESTful API、JAVA WebSocket和Apache Dubbo RPC接口文档生成的工具。完全基于注释生成文档，做到零侵入
   actions:
     - theme: brand
       text: 什么是 Smart-Doc?
@@ -21,8 +21,21 @@ hero:
 
 
 features:
-  - title: 🗂️ 产品简介
-    details: smart-doc是一款同时支持JAVA REST API、JAVA WebSocket和Apache Dubbo RPC接口文档生成的工具。完全基于注释生成文档，做到零侵入
+  - icon: 📝️
+    title: 零侵入
+    details: 完全基于注释信息生成文档，实现代码零侵入。
+  - icon: 📖
+    title: 接口多样性
+    details: 同时支持JAVA RESTful API、JAVA WebSocket和Apache Dubbo RPC接口文档
+  - icon: 🔧
+    title: 框架多样性
+    details: 支持 Torna、Spring Boot、JAX-RS、Solon等多种框架
+  - icon: 📚
+    title: 文档丰富
+    details: 支持生成 HTML、Asciidoc、Markdown、OpenAPI、Swagger、Postman、Word 等多种格式的文档
+  - icon: 🔌
+    title: 支持拓展
+    details: 支持用户使用 Java SPI 对支持框架进行扩展。
 ---
 
 
