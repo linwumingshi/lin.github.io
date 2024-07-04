@@ -10,10 +10,10 @@ hero:
   actions:
     - theme: brand
       text: What is Smart-Doc?
-      link: /zh/guide/what-is-smart-doc
+      link: /en/guide/what-is-smart-doc
     - theme: alt
       text: Quickstart
-      link: /zh/guide/getting-started
+      link: /en/guide/getting-started
     - theme: alt
       text: GitHub
       link: https://github.com/TongchengOpenSource/smart-doc

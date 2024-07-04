@@ -26,11 +26,21 @@ export const en = defineConfig({
 
 function nav(): DefaultTheme.NavItem[] {
     return [
+        { text: 'Home', link: '/' },
         {
             text: 'Guide',
             link: '/guide/what-is-smart-doc',
             activeMatch: '/guide/'
-        }
+        },
+        {
+            text: 'User Case',
+            items: [
+                {
+                    text: 'How To Use Smart-Doc To Generate JMeter Scripts',
+                    link: 'https://dzone.com/articles/how-to-use-smart-doc-to-generate-jmeter-test-scripts',
+                },
+            ],
+        },
     ]
 }
 

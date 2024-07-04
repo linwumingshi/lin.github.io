@@ -51,11 +51,21 @@ export const zh = defineConfig({
 
 function nav(): DefaultTheme.NavItem[] {
     return [
+        { text: '主页', link: '/' },
         {
             text: '指南',
             link: '/zh/guide/what-is-smart-doc',
             activeMatch: '/zh/guide/'
-        }
+        },
+        {
+            text: '社区案例',
+            items: [
+                {
+                    text: 'Smart-doc赋能JMeter性能压测实践',
+                    link: 'https://juejin.cn/post/7365785731702865954',
+                },
+            ],
+        },
     ]
 }
 

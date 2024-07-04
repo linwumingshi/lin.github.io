@@ -1,7 +1,7 @@
 # Example
 
-## [Single module](https://github.com/smart-doc-group/smart-doc-example-cn)
-
+## Single module
+[Single module](https://github.com/smart-doc-group/smart-doc-example-cn)
 ### Project directory structure
 ```shell
 smart-doc-example-cn
@@ -79,8 +79,8 @@ smart-doc-example-cn
 ```
 
 
-## [Multiple modules](https://gitee.com/smart-doc-team/spring-boot-maven-multiple-module)
-
+## Multiple modules
+[Multiple modules](https://gitee.com/smart-doc-team/spring-boot-maven-multiple-module)
 ### Project directory structure
 Among them, `dubbo-provider`, `spring-boot-web1`, `spring-boot-web2`, `spring-boot-web3`, `spring-boot-web4` start modules for each service
 ```shell
