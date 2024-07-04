@@ -1,11 +1,16 @@
 # What is Smart-Doc?
 
-![maven](https://img.shields.io/maven-central/v/com.ly.smart-doc/smart-doc)
-[![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-![number of issues closed](https://img.shields.io/github/issues-closed-raw/smart-doc-group/smart-doc)
-![closed pull requests](https://img.shields.io/github/issues-pr-closed/smart-doc-group/smart-doc)
-![java version](https://img.shields.io/badge/JAVA-1.8+-green.svg)
-![git star](https://img.shields.io/github/stars/smart-doc-group/smart-doc.svg)
+
+| Badge                   | Image                                                                                                                                                                              |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Maven Version           | [![maven](https://img.shields.io/maven-central/v/com.ly.smart-doc/smart-doc)](https://img.shields.io/maven-central/v/com.ly.smart-doc/smart-doc)                                   |
+| License                 | [![License](https://img.shields.io/badge/license-Apache%202-green.svg)](https://www.apache.org/licenses/LICENSE-2.0)                                                               |
+| Number of Closed Issues | [![number of issues closed](https://img.shields.io/github/issues-closed-raw/smart-doc-group/smart-doc)](https://img.shields.io/github/issues-closed-raw/smart-doc-group/smart-doc) |
+| Closed Pull Requests    | [![closed pull requests](https://img.shields.io/github/issues-pr-closed/smart-doc-group/smart-doc)](https://img.shields.io/github/issues-pr-closed/smart-doc-group/smart-doc)      |
+| Java Version            | [![java version](https://img.shields.io/badge/JAVA-1.8+-green.svg)](https://img.shields.io/badge/JAVA-1.8+-green.svg)                                                              | |
+| Gitee Star              | [![gitee star](https://gitee.com/smart-doc-team/smart-doc/badge/star.svg)](https://gitee.com/smart-doc-team/smart-doc/badge/star.svg)                                              |
+| GitHub Star             | [![git star](https://img.shields.io/github/stars/smart-doc-group/smart-doc.svg)](https://img.shields.io/github/stars/smart-doc-group/smart-doc.svg)                                |
+
 
 ## Introduce
 `smart-doc[smɑːt dɒk]` is a tool that supports both `JAVA REST API`、`JAVA WebSocket` and `Apache Dubbo RPC` interface document generation.
@@ -56,29 +61,66 @@ Just want to try it out? Skip to the [Quickstart](getting-started).
 
 > These are only part of the companies using `smart-doc`, for reference only. If you are using `smart-doc`, please [add your company here](https://github.com/smart-doc-group/smart-doc/issues/12) to tell us your scenario to make smart-doc better.
 
-![iflytek](/assets/known-users/iflytek.png)
-![oneplus](/assets/known-users/oneplus.png)
-![xiaomi](/assets/known-users/xiaomi.png)
-![shunfeng](/assets/known-users/shunfeng.png)
-![ly](/assets/known-users/ly.jpeg)
-![kuishou](/assets/known-users/kuishou.png)
-![mafengwo](/assets/known-users/mafengwo.png)
-![yunda](/assets/known-users/yunda.png)
-![zhongtongzhiyun](/assets/known-users/zhongtongzhiyun.png)
-![tcsklogo](/assets/known-users/tcsklogo.jpeg)
-![flipboard](/assets/known-users/flipboard.png)
-![dianxin](/assets/known-users/dianxin.png)
-![yidong](/assets/known-users/yidong.png)
-![neusoft](/assets/known-users/neusoft.png)
-![zhongkezhilian](/assets/known-users/zhongkezhilian.png)
-![hand-logo](/assets/known-users/hand-logo.svg)
-![yuanmengjiankang](/assets/known-users/yuanmengjiankang.png)
+<div style="display: flex; flex-wrap: wrap;">
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/iflytek.png" alt="iflytek" title="科大讯飞">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/oneplus.png" alt="oneplus" title="一加">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/xiaomi.png" alt="xiaomi" title="小米">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/shunfeng.png" alt="shunfeng" title="顺丰">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/ly.jpeg" alt="ly" title="同程旅行" style="width: 160px; height: 70px;">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/kuishou.png" alt="kuishou" title="快手">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/mafengwo.png" alt="mafengwo" title="马蜂窝">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/yunda.png" alt="yunda" title="韵达速递" style="width: 192px; height: 64px;">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/zhongtongzhiyun.png" alt="zhongtongzhiyun" title="中通智运">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/tcsklogo.jpeg" alt="tcsklogo" title="同程数科" style="width: 170px; height: 64px;">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/flipboard.png" alt="flipboard" title="红板报">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/dianxin.png" alt="dianxin" title="中国电信">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/yidong.png" alt="yidong" title="中国移动">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/neusoft.png" alt="neusoft" title="东软集团">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/zhongkezhilian.png" alt="zhongkezhilian" title="中科智链" style="width: 240px; height: 64px;">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/hand-logo.svg" alt="hand-logo" title="上海汉得信息技术股份有限公司" style="width: 240px; height: 64px;">
+    </div>
+    <div style="margin-right: 10px;">
+        <img src="/assets/known-users/yuanmengjiankang.png" alt="yuanmengjiankang" title="远盟健康" style="width: 230px; height: 64px;">
+    </div>
+</div>
+
 
 
 
 ## Acknowledgements
 Thanks to [JetBrains SoftWare](https://www.jetbrains.com) for providing free Open Source license for this open source project.
-<img src="/assets/jetbrains-variant-3.png" alt="jetbrains" width="200">
+<img src="/assets/jetbrains-variant-3.png" alt="jetbrains" width="260px" height="220px"/>
 
 
 ## Contact
