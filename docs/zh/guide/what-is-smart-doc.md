@@ -98,7 +98,7 @@
 
 ## 致谢
 感谢[JetBrains SoftWare](https://www.jetbrains.com) 为本开源项目提供的免费Open Source license。<br/>
-![jetbrains](/assets/jetbrains-variant-3.png)
+<img src="/assets/jetbrains-variant-3.png" alt="jetbrains" width="200">
 
 ## License
 

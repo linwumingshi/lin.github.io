@@ -44,7 +44,7 @@ Just want to try it out? Skip to the [Quickstart](getting-started).
 
 ## TODO
 
-- GRPC
+- `GRPC`
 
 ## License
 
@@ -78,7 +78,8 @@ Just want to try it out? Skip to the [Quickstart](getting-started).
 
 ## Acknowledgements
 Thanks to [JetBrains SoftWare](https://www.jetbrains.com) for providing free Open Source license for this open source project.
-![jetbrains](/assets/jetbrains-variant-3.png)
+<img src="/assets/jetbrains-variant-3.png" alt="jetbrains" width="200">
+
 
 ## Contact
 

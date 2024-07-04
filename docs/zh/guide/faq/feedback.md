@@ -17,10 +17,10 @@
 
 ## 单模块测试用例
 如果你是单模块中就能复现的问题，则提用例的步骤如下：
-- `fork` [smart-doc-example-cn](https://github.com/smart-doc-group/smart-doc-example-cn)项目到个人仓库中；
+- `fork` [smart-doc-example-cn](https://github.com/smart-doc-group/smart-doc-example-cn) 项目到个人仓库中；
 - 修改`fork`的代码添加测试用例，然后项目`github`上会有一个`【Sync fork】`的地方，选择给我们提pr即可，后面官方也会合并的测试用例进行问题的测试。
 
 ## 多模块项目测试用例反馈
 如果你是在多模块中才能复现的问题，则提用例的步骤如下：
-- `fork` [spring-boot-maven-multiple-module](https://gitee.com/smart-doc-team/spring-boot-maven-multiple-module)项目到个人仓库中；
+- `fork` [spring-boot-maven-multiple-module](https://gitee.com/smart-doc-team/spring-boot-maven-multiple-module) 项目到个人仓库中；
 - 修改`fork`的代码添加测试用例，然后项目`gitee`上会有一个`【Pull Request】`的地方，选择给我们提pr即可，后面官方也会合并的测试用例进行问题的测试。
