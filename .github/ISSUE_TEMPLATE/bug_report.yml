@@ -25,6 +25,17 @@ body:
     validations:
       required: true
 
+  - type: dropdown
+    id: plugin
+    attributes:
+      label: Plugin
+      description: What plugin of smart-doc are you running?
+      options:
+        - smart-doc-maven-plugin
+        - smart-doc-gradle-plugin
+    validations:
+      required: true
+
   - type: input
     id: plugin-version
     attributes:
