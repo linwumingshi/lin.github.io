@@ -41,7 +41,7 @@ body:
     attributes:
       label: Plugin version
       description: What plugin version of smart-doc are you running?
-      placeholder: e.g. smart-doc-maven-plugin 3.0.5 or smart-doc-gradle-plugin 3.0.5
+      placeholder: ex. 3.0.5
     validations:
       required: true
 
@@ -50,7 +50,7 @@ body:
     attributes:
       label: Build tool version
       description: What build tool version version of smart-doc are you running?
-      placeholder: e.g. maven 3.9.6 or gradle 8.9
+      placeholder: ex. maven 3.9.6 or gradle 8.9
     validations:
       required: true
 
@@ -59,7 +59,7 @@ body:
     attributes:
       label: Jdk version
       description: What jdk version are you seeing the problem on?
-      placeholder: e.g. 1.8
+      placeholder: ex. 1.8
     validations:
       required: true
 
