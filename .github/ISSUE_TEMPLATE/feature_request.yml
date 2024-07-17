@@ -48,9 +48,9 @@ body:
       label: Validations
       description: Before submitting the issue, please make sure you do the following(在提交问题之前，请确保执行以下操作)
       options:
-        - label: Check if you're on the [latest smart-doc version](https://github.com/TongchengOpenSource/smart-doc/releases/latest).
-          required: true
         - label: Read the [docs](https://smart-doc-group.github.io/).
+          required: true
+        - label: Read the [Contributing Guidelines](https://smart-doc-group.github.io/guide/community/contributing).
           required: true
         - label: Check that there isn't already an issue that reports the same bug to avoid creating a duplicate.
           required: true

@@ -79,12 +79,6 @@ body:
       required: true
 
   - type: textarea
-    id: possible-solution
-    attributes:
-      label: Possible Solution(bug解决建议，社区已开启国际化推广，请用文心一言、讯飞星火等辅助翻译成英文，减少社区开发者的工作)
-      description: Not obligatory, but suggest a fix/reason for the bug,or ideas how to implement the addition or change
-
-  - type: textarea
     id: steps-to-reproduce
     attributes:
       label: Steps to Reproduce (Bug产生步骤，请尽量提供用例代码。社区已开启国际化推广，请用文心一言、讯飞星火等辅助翻译成英文，减少社区开发者的工作)
@@ -92,6 +86,12 @@ body:
         steps to.reproduce this bug. Include code to reproduce, if relevant
     validations:
       required: true
+
+  - type: textarea
+    id: possible-solution
+    attributes:
+      label: Possible Solution(Bug解决建议，社区已开启国际化推广，请用文心一言、讯飞星火等辅助翻译成英文，减少社区开发者的工作)
+      description: Not obligatory, but suggest a fix/reason for the bug,or ideas how to implement the addition or change
 
   - type: textarea
     id: context
