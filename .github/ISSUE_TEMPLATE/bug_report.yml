@@ -37,15 +37,6 @@ body:
       required: true
 
   - type: input
-    id: plugin-version
-    attributes:
-      label: Plugin version
-      description: What plugin version of smart-doc are you running?
-      placeholder: ex. 3.0.5
-    validations:
-      required: true
-
-  - type: input
     id: build-tool-version
     attributes:
       label: Build tool version
@@ -63,13 +54,11 @@ body:
     validations:
       required: true
 
-
   - type: textarea
     id: bug-description
     attributes:
       label: Describe the bug(BUG描述，社区已开启国际化推广，请用文心一言、讯飞星火等辅助翻译成英文，减少社区开发者的工作)
       description: A clear and concise description of what the bug is. If you intend to submit a PR for this issue, tell us in the description. Thanks!
-      placeholder:
     validations:
       required: true
 
@@ -78,30 +67,22 @@ body:
     attributes:
       label: Expected Behavior(您期望的结果，社区已开启国际化推广，请用文心一言、讯飞星火等辅助翻译成英文，减少社区开发者的工作)
       description: If you're describing a bug, tell us what should happen.If you're suggesting a change/improvement, tell us how it should work
-      placeholder:
     validations:
       required: true
-
 
   - type: textarea
     id: current-behavior
     attributes:
       label: Current Behavior(当前结果，社区已开启国际化推广，请用文心一言、讯飞星火等辅助翻译成英文，减少社区开发者的工作)
       description: If describing a bug, tell us what happens instead of the expected behavior.If suggesting a change/improvement, explain the difference from current behavior
-      placeholder:
     validations:
       required: true
-
 
   - type: textarea
     id: possible-solution
     attributes:
       label: Possible Solution(bug解决建议，社区已开启国际化推广，请用文心一言、讯飞星火等辅助翻译成英文，减少社区开发者的工作)
-      description:
-      placeholder:
-    validations:
-      required: true
-
+      description: Not obligatory, but suggest a fix/reason for the bug,or ideas how to implement the addition or change
 
   - type: textarea
     id: steps-to-reproduce
@@ -109,7 +90,6 @@ body:
       label: Steps to Reproduce (Bug产生步骤，请尽量提供用例代码。社区已开启国际化推广，请用文心一言、讯飞星火等辅助翻译成英文，减少社区开发者的工作)
       description: Provide a link to a live example, or an unambiguous set of
         steps to.reproduce this bug. Include code to reproduce, if relevant
-      placeholder:
     validations:
       required: true
 
@@ -118,16 +98,12 @@ body:
     attributes:
       label: Context(Bug影响描述，社区已开启国际化推广，请用文心一言、讯飞星火等辅助翻译成英文，减少社区开发者的工作)
       description: How has this issue affected you? What are you trying to accomplish? If you're suggesting a change/improvement, tell us how it should work
-      placeholder:
-    validations:
-      required: true
-
 
   - type: checkboxes
     id: checkboxes
     attributes:
       label: Validations
-      description: Before submitting the issue, please make sure you do the following
+      description: Before submitting the issue, please make sure you do the following(在提交问题之前，请确保执行以下操作)
       options:
         - label: Check if you're on the [latest smart-doc version](https://github.com/TongchengOpenSource/smart-doc/releases/latest).
           required: true
